@@ -1,0 +1,2091 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manju Kashika | மீன் / The mean PROJECT</title>
+  <!-- Google Fonts: Open Sans (ExtraBold Italic 800i for subheadings) & Plus Jakarta Sans (clean body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Crisp Off-White Base — very close to the pure white (#FFFFFF) in the stickers */
+      --bg-cream: #FAF9F7;
+
+      /* Clean Subtle Grey Panels */
+      --panel-grey: rgba(235, 234, 231, 0.9);
+      --panel-grey-solid: #EAE9E6;
+      --panel-card: #FFFFFF;
+      --border-subtle: #D8D5CE;
+      --border-dark: #2C2A27;
+
+      /* Typography Colors */
+      --ink-primary: #1E1D1B;
+      --ink-secondary: #46433E;
+      --ink-muted: #767168;
+
+      /* Palette Colors from color scheme.png & color scheme 2.webp */
+      --scheme-sage: #93CBB4;
+      --scheme-sage-deep: #3B8F6E;
+      --scheme-butter: #FCECA4;
+      --scheme-coral: #FF6864;
+      --scheme-gold: #FFCC54;
+      --scheme-cinnamon: #D35E7F;
+      --scheme-manz: #D7E97B;
+      --scheme-purple: #A999EB;
+      --scheme-purple-deep: #6E59C9;
+      --scheme-sky: #9BCDEF;
+      --scheme-sky-deep: #3D88B8;
+
+      /* Font Stacks */
+      --font-subheading: 'Open Sans', 'Arial Black', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      /* Hand-drawn wavy thin grid SVG tile on near-white background */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%23DFDCD5' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M 0 26 C 55 24.2, 105 27.8, 160 25.8 C 215 23.8, 268 27.5, 320 26'/%3E%3Cpath d='M 0 66 C 48 67.6, 112 64.3, 160 66.4 C 212 68.2, 270 64.5, 320 66' stroke-width='1.25'/%3E%3Cpath d='M 0 106 C 60 104.5, 108 107.6, 160 105.7 C 218 103.9, 265 107.4, 320 106'/%3E%3Cpath d='M 0 146 C 52 147.8, 104 144.4, 160 146.2 C 214 148.0, 268 144.6, 320 146'/%3E%3Cpath d='M 0 186 C 58 184.3, 114 187.5, 160 185.6 C 210 183.7, 266 187.6, 320 186' stroke-width='1.25'/%3E%3Cpath d='M 0 226 C 46 227.5, 106 224.2, 160 226.3 C 216 228.1, 272 224.5, 320 226'/%3E%3Cpath d='M 0 266 C 54 264.4, 110 267.8, 160 265.8 C 214 263.8, 264 267.4, 320 266'/%3E%3Cpath d='M 0 306 C 50 307.7, 108 304.5, 160 306.2 C 215 307.9, 270 304.4, 320 306'/%3E%3Cpath d='M 26 0 C 24.3 54, 27.7 106, 25.8 160 C 23.9 214, 27.6 268, 26 320'/%3E%3Cpath d='M 66 0 C 67.7 50, 64.4 110, 66.3 160 C 68.1 212, 64.5 268, 66 320' stroke-width='1.25'/%3E%3Cpath d='M 106 0 C 104.4 58, 107.6 108, 105.7 160 C 103.8 216, 107.5 266, 106 320'/%3E%3Cpath d='M 146 0 C 147.8 52, 144.3 106, 146.2 160 C 148.0 214, 144.6 270, 146 320'/%3E%3Cpath d='M 186 0 C 184.2 56, 187.7 112, 185.7 160 C 183.8 210, 187.5 266, 186 320' stroke-width='1.25'/%3E%3Cpath d='M 226 0 C 227.6 48, 224.2 108, 226.3 160 C 228.1 216, 224.5 270, 226 320'/%3E%3Cpath d='M 266 0 C 264.4 54, 267.8 110, 265.8 160 C 263.9 214, 267.4 264, 266 320'/%3E%3Cpath d='M 306 0 C 307.7 52, 304.4 108, 306.2 160 C 307.9 215, 304.5 268, 306 320'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 320px 320px;
+      color: var(--ink-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: clip;
+    }
+
+    /* Subheadings in Open Sans ExtraBold Italic / Arial Black */
+    h1, h2, h3, .subheading-italic {
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      color: var(--ink-primary);
+      line-height: 1.2;
+    }
+
+    /* Die-cut sticker drop-shadow */
+    .sticker-img {
+      display: block;
+      filter: drop-shadow(0 5px 14px rgba(30, 29, 27, 0.09));
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.25s ease;
+    }
+
+    /* ==========================================================================
+       HEADER: Bigger Header | Simple Text Links on Left | Mean Project Logo on Right
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.35rem 4rem;
+      min-height: 128px;
+      background: linear-gradient(to bottom, rgba(250, 249, 247, 0.98) 82%, rgba(250, 249, 247, 0));
+    }
+
+    .nav-text-links {
+      display: flex;
+      gap: 2.6rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.3rem 0;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 3px;
+      background: var(--ink-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.22s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--ink-primary);
+    }
+
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo-sticker {
+      height: 92px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 3px 8px rgba(30, 29, 27, 0.09));
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .brand-logo-sticker:hover {
+      transform: scale(1.03);
+    }
+
+    /* ==========================================================================
+       PAGE LAYOUT & CENTERED FULL-WIDTH GREY PANELS
+       ========================================================================== */
+    .page-container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem 3.25rem;
+      position: relative;
+      flex: 1 0 auto;
+    }
+
+    .page-view {
+      display: none;
+      animation: fadeSlideIn 0.35s ease forwards;
+    }
+
+    .page-view.active {
+      display: block;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Clean Subtle Grey Panel Base Styling (centered and full width) */
+    .grey-panel {
+      width: 100%;
+      background: var(--panel-grey-solid);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 2.6rem 3rem;
+      position: relative;
+      box-shadow: 0 8px 26px rgba(30, 29, 27, 0.03);
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .section-heading::after {
+      content: "";
+      height: 2px;
+      flex: 1;
+      background: rgba(30, 29, 27, 0.12);
+    }
+
+    .prose-text {
+      color: var(--ink-secondary);
+      font-size: 1.04rem;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    /* ==========================================================================
+       HOME PAGE — Combined 2-Row Box (Top Row: White 'About Me' | Bottom Row: Tinted 'Goldfish Diary')
+       with Bigger Girl Sticker Overlapping Left & Suit Fish Sticker Overlapping Right
+       ========================================================================== */
+    .home-combined-section {
+      position: relative;
+      width: 100%;
+      margin-top: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .home-combined-box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border: 1.5px solid #C8CCD2;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(30, 29, 27, 0.045);
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Top Row: Solid White 'About Me' */
+    .about-me-col {
+      background: #FFFFFF;
+      padding: 2.8rem 3rem 2.8rem 285px;
+      min-height: 275px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Bottom Row: Subtle Tinted 'Goldfish Diary' (moved text right to clear Girl Sticker on left) */
+    .goldfish-diary-col {
+      background: rgba(236, 240, 244, 0.92);
+      border-top: 1.5px solid #C8CCD2;
+      padding: 2.3rem 235px 2.3rem 265px;
+      min-height: 225px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .goldfish-diary-col .section-heading {
+      font-size: 1.55rem;
+      color: var(--ink-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .goldfish-diary-col .prose-text {
+      font-size: 0.98rem;
+      color: var(--ink-secondary);
+    }
+
+    /* Bigger Girl Sticker Overlapping the Left Side of the Top Row */
+    .girl-sticker-overlap {
+      position: absolute;
+      left: -48px;
+      top: -18px;
+      transform: none;
+      width: 325px;
+      height: auto;
+      z-index: 8;
+      pointer-events: auto;
+    }
+
+    .girl-sticker-overlap:hover {
+      transform: translateY(-3px) rotate(-1deg);
+    }
+
+    /* Suit Fish Sticker Overlapping the Right Side of the Bottom Row */
+    .suit-fish-sticker-overlap {
+      position: absolute;
+      right: -35px;
+      bottom: -22px;
+      transform: none;
+      width: 255px;
+      height: auto;
+      z-index: 8;
+      pointer-events: auto;
+    }
+
+    .suit-fish-sticker-overlap:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .panel-action-row {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .btn-editorial {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.6rem 1.2rem;
+      background: #FFFFFF;
+      color: var(--ink-primary);
+      border: 1.5px solid var(--border-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn-editorial:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0 var(--border-dark);
+      background: var(--scheme-butter);
+    }
+
+    .btn-editorial:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 var(--border-dark);
+    }
+
+    .cred-card {
+      background: var(--panel-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 7px;
+      padding: 1.5rem 1.55rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cred-card h3 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      padding-bottom: 0.55rem;
+      border-bottom: 1.5px solid rgba(30, 29, 27, 0.08);
+    }
+
+    .subheading-research {
+      color: var(--scheme-cinnamon); /* Cinnamon Satin (#D35E7F) */
+    }
+
+    .subheading-publications {
+      color: var(--scheme-purple-deep); /* Max Blue Purple (#6E59C9 / #A999EB) */
+    }
+
+    .subheading-contact {
+      color: var(--scheme-sage-deep); /* Sage Mint (#3B8F6E / #93CBB4) */
+    }
+
+    .cred-list {
+      list-style: none;
+      font-size: 0.93rem;
+      color: var(--ink-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cred-list li {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .cred-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--ink-muted);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       NOTEBOOK PAGE — Centered Subject Tables + Stickers on Top in Left & Right Space
+       ========================================================================== */
+    .notebook-page-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Top Header Row of Notebook Page: Title & Filter Pills on Left, School of Fish on Top Right */
+    .notebook-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 12;
+    }
+
+    .notebook-controls-col {
+      flex: 1;
+    }
+
+    .school-top-right-sticker {
+      width: 325px;
+      height: auto;
+      flex-shrink: 0;
+      margin-top: -1.4rem;
+      margin-bottom: 0;
+      margin-right: 7.5rem;
+      position: relative;
+      z-index: 15;
+    }
+
+    .school-top-right-sticker:hover {
+      transform: scale(1.03);
+    }
+
+    .subjects-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .subject-pill {
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 0.95rem;
+      text-transform: none;
+      padding: 0.5rem 1.15rem;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 6px;
+      background: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .subject-pill.pill-maths {
+      background: #2E5E88; /* Subtle Solid Blue */
+      color: #DDF0FF;      /* Pastel Blue Text */
+    }
+
+    .subject-pill.pill-neuroimaging {
+      background: #4F6B46; /* Subtle Solid Olive-y Green */
+      color: #E2F7E4;      /* Pastel Green Text */
+    }
+
+    .subject-pill.pill-methods {
+      background: #B58B24; /* Subtle Solid Mustard Yellow */
+      color: #FFF7CC;      /* Butter Yellow Text */
+    }
+
+    .subject-pill.pill-all {
+      background: #FFFFFF;
+      color: var(--ink-primary);
+    }
+
+    .subject-pill:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .subject-pill.active {
+      box-shadow: 3px 3px 0 var(--border-dark);
+      transform: translate(-1px, -1px);
+    }
+
+    /* Full-Width Subject Tables (Table is Priority) + Swimming Fish Stickers Around the Edges */
+    .subjects-list-full {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Small Fish Stickers Swimming Around on Home & Notebook Pages */
+    @keyframes gentleSwim {
+      0%, 100% {
+        transform: translateY(0px) rotate(var(--fish-rot, 0deg));
+      }
+      50% {
+        transform: translateY(-6px) rotate(calc(var(--fish-rot, 0deg) + 2deg));
+      }
+    }
+
+    .swimming-fish-sticker {
+      position: absolute;
+      z-index: 20;
+      opacity: 1;
+      pointer-events: auto;
+      filter: drop-shadow(0 4px 9px rgba(30, 29, 27, 0.09));
+      transform: rotate(var(--fish-rot, 0deg));
+      transition: top 0.25s ease, transform 0.2s ease;
+    }
+
+    .swimming-fish-sticker:hover {
+      transform: scale(1.06) rotate(var(--fish-rot, 0deg));
+    }
+
+    /* Home Page Swimming Fishes Around the Combined 2-Row Box */
+    .home-fish-1 {
+      right: -95px;
+      top: 35px;
+      width: 92px;
+      --fish-rot: 7deg;
+      animation-delay: 0s;
+    }
+
+    .home-fish-2 {
+      right: 12%;
+      top: -46px;
+      width: 142px;
+      --fish-rot: 4deg;
+      animation-delay: 0.9s;
+    }
+
+    .home-fish-3 {
+      left: -105px;
+      bottom: 35px;
+      width: 118px;
+      --fish-rot: -7deg;
+      animation-delay: 1.7s;
+    }
+
+    .home-fish-4 {
+      left: 16%;
+      bottom: -58px;
+      width: 128px;
+      --fish-rot: 5deg;
+      animation-delay: 2.3s;
+    }
+
+    .home-fish-5 {
+      right: -102px;
+      top: 42%;
+      width: 108px;
+      --fish-rot: 6deg;
+      animation-delay: 1.2s;
+    }
+
+    .home-fish-6 {
+      left: 44%;
+      bottom: -64px;
+      width: 126px;
+      --fish-rot: -5deg;
+      animation-delay: 2.8s;
+    }
+
+    /* Notebook Page Swimming Fishes (3 around the Subject Tables, 3 around the Memory Test) */
+    .nb-fish-1 {
+      left: -108px;
+      top: 35px;
+      width: 120px;
+      --fish-rot: -7deg;
+    }
+
+    .nb-fish-2 {
+      right: -116px;
+      top: 170px;
+      width: 142px;
+      --fish-rot: 5deg;
+    }
+
+    .nb-fish-3 {
+      left: -114px;
+      top: 340px;
+      width: 135px;
+      --fish-rot: 6deg;
+    }
+
+    /* 3 Fish Stickers Placed Around the Memory Test (Quiz Section) */
+    .quiz-fish-1 {
+      right: -95px;
+      top: 40px;
+      width: 92px;
+      --fish-rot: -8deg;
+    }
+
+    .quiz-fish-2 {
+      left: -110px;
+      top: 175px;
+      width: 128px;
+      --fish-rot: -4deg;
+    }
+
+    .quiz-fish-3 {
+      right: -104px;
+      bottom: -35px;
+      width: 112px;
+      --fish-rot: 8deg;
+    }
+
+    .subject-group {
+      width: 100%;
+      margin-bottom: 1.85rem;
+      background: var(--panel-grey);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* Pastel Background for Each Subject Box & Table Back */
+    .subject-group[data-subject="maths"] {
+      background: #EAF5FF;
+      border-color: #B8D8F5;
+    }
+    .subject-group[data-subject="neuroimaging"] {
+      background: #EDF9EF;
+      border-color: #BCE0C1;
+    }
+    .subject-group[data-subject="methods"] {
+      background: #FFFBE0;
+      border-color: #E8D58E;
+    }
+
+    .subject-group-header {
+      padding: 1.15rem 1.75rem;
+      border-bottom: 1.5px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .subject-group[data-subject="maths"] .subject-group-header {
+      background: #DDF0FF;
+      border-left: 6px solid #2E5E88;
+      border-bottom-color: #B8D8F5;
+    }
+    .subject-group[data-subject="neuroimaging"] .subject-group-header {
+      background: #E2F7E4;
+      border-left: 6px solid #4F6B46;
+      border-bottom-color: #BCE0C1;
+    }
+    .subject-group[data-subject="methods"] .subject-group-header {
+      background: #FFF7CC;
+      border-left: 6px solid #B58B24;
+      border-bottom-color: #E8D58E;
+    }
+
+    /* Chapter dropdown headers stay white */
+    summary.subsection-summary {
+      background: #FFFFFF;
+    }
+
+    /* Table column headers (th) also use the subject's pastel shade instead of grey */
+    .subject-group[data-subject="maths"] .topic-table th {
+      background: #E5F3FF;
+    }
+    .subject-group[data-subject="neuroimaging"] .topic-table th {
+      background: #E7F7E9;
+    }
+    .subject-group[data-subject="methods"] .topic-table th {
+      background: #FFF9D8;
+    }
+
+    .subject-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .subject-group-header h3 {
+      font-size: 1.45rem;
+      text-transform: none;
+    }
+
+    .subject-meta {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-secondary);
+    }
+
+    /* Subsections Accordion inside each Subject */
+    .subsection-list {
+      padding: 1rem 1.5rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    details.subsection-item {
+      background: var(--panel-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    details.subsection-item[open] {
+      border-color: var(--border-dark);
+      box-shadow: 0 4px 14px rgba(30, 29, 27, 0.04);
+    }
+
+    summary.subsection-summary {
+      list-style: none;
+      padding: 0.95rem 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 1.02rem;
+      color: var(--ink-primary);
+      background: #FFFFFF;
+      user-select: none;
+      transition: background-color 0.15s ease;
+    }
+
+    summary.subsection-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.subsection-summary:hover {
+      background: var(--scheme-butter);
+    }
+
+    .summary-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .summary-chevron {
+      font-family: var(--font-mono);
+      font-style: normal;
+      font-size: 0.8rem;
+      color: var(--scheme-cinnamon);
+      transition: transform 0.2s ease;
+    }
+
+    details.subsection-item[open] .summary-chevron {
+      transform: rotate(90deg);
+    }
+
+    .summary-count {
+      font-family: var(--font-mono);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 0.72rem;
+      color: var(--ink-primary);
+      background: #FFFFFF;
+      padding: 0.15rem 0.6rem;
+      border-radius: 99px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Minimal Topic Table */
+    .table-scroll-wrap {
+      overflow-x: auto;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .topic-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      text-align: left;
+    }
+
+    .topic-table th {
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--ink-primary);
+      background: rgba(235, 234, 231, 0.7);
+      padding: 0.75rem 1.1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .topic-table td {
+      padding: 0.8rem 1.1rem;
+      border-bottom: 1px solid rgba(201, 196, 186, 0.45);
+      color: var(--ink-secondary);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .topic-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .topic-table td.topic-name {
+      font-weight: 700;
+      color: var(--ink-primary);
+      width: 20%;
+    }
+
+    .topic-table td.topic-def {
+      width: 34%;
+    }
+
+    .topic-table td.topic-app {
+      width: 28%;
+    }
+
+    .topic-table td.topic-res {
+      width: 18%;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-primary);
+      text-decoration: none;
+      padding: 0.2rem 0.55rem;
+      background: var(--scheme-butter);
+      border: 1px solid var(--border-dark);
+      border-radius: 4px;
+      margin-right: 0.3rem;
+      margin-bottom: 0.25rem;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .resource-link:hover {
+      background: var(--scheme-manz);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       NOTEBOOK PAGE — SECTION 3: Quick Multiple Choice Quiz + Bigger Starry Fish
+       ========================================================================== */
+    .quiz-section {
+      position: relative;
+      margin-top: 3rem;
+      z-index: 2;
+    }
+
+    .quiz-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1.5px solid rgba(201, 196, 186, 0.55);
+      flex-wrap: wrap;
+    }
+
+    .quiz-mascot-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* Bigger fish sticker in the memory test section (pokes above the top border so the white card stays compact) */
+    .quiz-mascot-img {
+      width: 165px;
+      height: auto;
+      margin-top: -3.2rem;
+      margin-bottom: -1.6rem;
+      transform: rotate(-4deg);
+    }
+
+    .quiz-mascot-img:hover {
+      transform: rotate(0deg) scale(1.04);
+    }
+
+    .quiz-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .quiz-card {
+      background: var(--panel-card);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 9px;
+      padding: 1.15rem 1.85rem 1.45rem;
+    }
+
+    .quiz-progress {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--scheme-cinnamon);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .quiz-question-text {
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-bottom: 1.15rem;
+      color: var(--ink-primary);
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .quiz-option-btn {
+      text-align: left;
+      padding: 0.8rem 1rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--ink-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .quiz-option-btn:hover:not(:disabled) {
+      border-color: var(--border-dark);
+      background: var(--scheme-butter);
+    }
+
+    .quiz-option-btn.correct {
+      background: rgba(147, 203, 180, 0.45);
+      border-color: var(--scheme-sage-deep);
+      font-weight: 600;
+    }
+
+    .quiz-option-btn.wrong {
+      background: rgba(255, 104, 100, 0.25);
+      border-color: #B83B38;
+    }
+
+    .option-letter {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--border-dark);
+      background: var(--scheme-sky);
+      color: var(--ink-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .quiz-feedback-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 36px;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border-subtle);
+    }
+
+    .quiz-feedback-msg {
+      font-size: 0.9rem;
+      color: var(--ink-secondary);
+    }
+
+    /* ==========================================================================
+       SOLID FULL-WIDTH WHITE FOOTER PANEL —
+       Left: Grey 'Current CV' Box & Bottom-Left Credit Text
+       Right: Contact Sardine Tin Flush in Bottom-Right Corner
+       ========================================================================== */
+    .site-footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      background: #FFFFFF;
+      border-top: 1.5px solid var(--border-subtle);
+      padding: 0;
+      margin-top: auto;
+      margin-bottom: 0;
+      overflow-x: clip;
+      overflow-y: visible;
+    }
+
+    .footer-inner {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding-left: 3.5rem;
+      padding-right: 0;
+    }
+
+    .footer-left-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 2.2rem 0 0.9rem 0;
+    }
+
+    .btn-cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-subheading);
+      font-weight: 800;
+      font-style: italic;
+      font-size: 0.96rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.95rem 1.75rem;
+      background: #EAE9E6;
+      color: var(--ink-primary);
+      border: 1.5px solid #C6C3BC;
+      border-radius: 7px;
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-cv-link:hover {
+      background: #DFDDD8;
+      border-color: var(--border-dark);
+      transform: translateY(-1px);
+    }
+
+    .footer-credit-text {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      text-align: left;
+      line-height: 1.4;
+      letter-spacing: 0.01em;
+    }
+
+    .footer-right-col {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      flex-shrink: 0;
+      line-height: 0;
+      overflow: hidden;
+      margin-top: -45px;
+      padding-top: 45px;
+    }
+
+    /* Contact Sardine Tin Wrapper flush in the Bottom-Right Corner;
+       negative margin-top lets the (XX) pull-tab poke out on top while .footer-right-col clips the bottom/right cleanly */
+    .contact-tin-wrapper {
+      position: relative;
+      width: 650px;
+      max-width: 100%;
+      flex-shrink: 0;
+      margin-top: -36px;
+      margin-right: -18px;
+      margin-bottom: -18px;
+    }
+
+    .contact-tin-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Overlay positioned strictly inside the open white left compartment of the sardine tin
+       (Measured compartment: X = 10%..58.9%, Y = 23%..82.2%) */
+    .tin-contact-box {
+      position: absolute;
+      left: 11.5%;
+      top: 24%;
+      width: 46.5%;
+      height: 56%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.32rem;
+      padding: 0.25rem 0.5rem;
+      z-index: 5;
+      overflow: hidden;
+      line-height: 1.3;
+    }
+
+    .tin-contact-item {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.32;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .tin-contact-item:hover {
+      transform: translateX(3px);
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+
+    /* Distinct palette colors for each link inside the sardine tin */
+    .tin-link-1 { color: #D1433F; } /* Coral Red */
+    .tin-link-2 { color: #C24570; } /* Cinnamon Satin */
+    .tin-link-3 { color: #2474B5; } /* Sky Blue Deep */
+    .tin-link-4 { color: #2C825E; } /* Sage Green Deep */
+    .tin-link-5 { color: #624BC4; } /* Max Blue Purple */
+
+    /* Responsive adjustments */
+    @media (max-width: 960px) {
+      .site-header {
+        padding: 1rem 1.5rem;
+        min-height: 100px;
+      }
+      .brand-logo-sticker {
+        height: 68px;
+      }
+      .page-container {
+        padding: 1.5rem 1.25rem 4rem;
+      }
+      .home-combined-box {
+        grid-template-columns: 1fr;
+      }
+      .about-me-col,
+      .goldfish-diary-col {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-left: none;
+      }
+      .goldfish-diary-col {
+        border-top: 1.5px solid #C8CCD2;
+      }
+      .girl-sticker-overlap,
+      .suit-fish-sticker-overlap {
+        position: static;
+        transform: none;
+        margin: 1.5rem auto 0;
+      }
+      .notebook-top-bar,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .school-top-right-sticker {
+        align-self: flex-end;
+        margin-top: 0;
+      }
+      .credentials-grid,
+      .quiz-options {
+        grid-template-columns: 1fr;
+      }
+      .contact-tin-wrapper {
+        width: 100%;
+      }
+      .tin-contact-item {
+        font-size: 0.64rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER: Left Simple Text Links (Home, Notebook) | Right Mean Project Logo
+       ======================================================================== -->
+  <header class="site-header">
+    <nav class="nav-text-links" aria-label="Primary Navigation">
+      <a href="#home" class="nav-link active" data-target="home" onclick="switchPage('home', event)">
+        Home
+      </a>
+      <a href="#notebook" class="nav-link" data-target="goldfish" onclick="switchPage('goldfish', event)">
+        Notebook
+      </a>
+    </nav>
+
+    <div class="brand-cluster" onclick="switchPage('home', event)" title="மீன் / The mean PROJECT">
+      <img src="assets/logo-final.png" alt="மீன் / The mean PROJECT Logo" class="brand-logo-sticker" />
+    </div>
+  </header>
+
+  <main class="page-container">
+
+    <!-- ======================================================================
+         PAGE 1: HOME VIEW
+         ====================================================================== -->
+    <div id="view-home" class="page-view active">
+
+      <!-- COMBINED 2-COLUMN BOX:
+           Left Column (White): 'About Me' with Bigger Girl Sticker on Left
+           Right Column (Subtle Tinted): 'Goldfish Diary' with Suit Fish Sticker on Right -->
+      <section class="home-combined-section">
+
+        <!-- Small Swimming Fish Stickers Around the Combined Box -->
+        <img
+          src="assets/fish-icon-4.png"
+          alt="Small swimming fish sticker"
+          class="swimming-fish-sticker home-fish-1"
+        />
+        <img
+          src="assets/fish-icon-3.png"
+          alt="Checkered fish sticker"
+          class="swimming-fish-sticker home-fish-6"
+        />
+        <img
+          src="assets/fish-icon-2.png"
+          alt="Slender striped fish sticker"
+          class="swimming-fish-sticker home-fish-2"
+        />
+        <img
+          src="assets/fish-icon-1.png"
+          alt="Smiling scaly fish sticker"
+          class="swimming-fish-sticker home-fish-3"
+        />
+        <img
+          src="assets/fish-icon-5.png"
+          alt="Spiky dorsal fish sticker"
+          class="swimming-fish-sticker home-fish-4"
+        />
+        <img
+          src="assets/fish-icon-6.png"
+          alt="Striped angelfish sticker"
+          class="swimming-fish-sticker home-fish-5"
+        />
+
+        <!-- Bigger Girl Doodle Sticker Overlapping Left -->
+        <img
+          src="assets/doodle-girl.png"
+          alt="Die-cut sticker of girl with open brain holding laptop and Brain Stuff book"
+          class="sticker-img girl-sticker-overlap"
+        />
+
+        <!--Combined 2-Column Box -->
+        <div class="home-combined-box">
+
+          <!-- ================================================================
+               EDIT 'ABOUT ME' TEXT BELOW (Left White Column)
+               ================================================================ -->
+          <div class="about-me-col">
+            <h2 class="section-heading">About Me</h2>
+            <p class="prose-text">
+              Hey!
+              I am Manju Kashika, a Cognitive Neuroscience graduate who really likes research and art. After my BSc Psychology from India, switching to a more coding, stats and anatomy focused MSc Cognitive Neuroscience course in the UK was a pain in the tail. I also forget things. Not a great combination for someone aspiring to be a researcher. <br> <br> The மீன் / Mean project is for me to document the process of figuring out advanced mathematics, statistics, physics for neuroscience research application, for my own goldfish memory and other fellow fish floating through space tryna explore the intricacies of sciences. I am hoping to put my art, research skills and blind perseverance to making this work for myself and hopefully for a few others. WISH ME LUCK. T_T          </p>
+          </div>
+
+          <!-- ================================================================
+               EDIT 'GOLDFISH DIARY' TEXT BELOW (Right Tinted Column)
+               ================================================================ -->
+          <div class="goldfish-diary-col">
+            <h2 class="section-heading">Goldfish Diary</h2>
+            <p class="prose-text">
+              Despite popular myth, goldfish can apparently hold onto memories for months— but I have realized my long-term memory is lacking the length (ironic that my research interest is memory). The goldfish diary is my public study log and self-curated curriculum. While ONE textbook or online course is not gonna do it all, it is all out there and this journey is gonna take a long time. Should be a fun new nerd adventure. 
+            </p>
+            <div class="panel-action-row">
+              <button class="btn-editorial" onclick="switchPage('goldfish', event)">
+                Open Notebook &rarr;
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Suit Fish Doodle Sticker Overlapping Right -->
+        <img
+          src="assets/doodle-suit-fish.png"
+          alt="Die-cut sticker of fish wearing a suit and patterned tie"
+          class="sticker-img suit-fish-sticker-overlap"
+        />
+      </section>
+
+    </div>
+
+    <!-- ======================================================================
+         PAGE 2: NOTEBOOK VIEW
+         (Centered subject tables with stickers placed ON TOP in the Left & Right space)
+         ====================================================================== -->
+    <div id="view-goldfish" class="page-view">
+
+      <div class="notebook-page-wrap">
+
+        <!-- Top Bar: Heading & Filter Pills on Left | School of Fish Sticker on Top Right -->
+        <div class="notebook-top-bar">
+          <div class="notebook-controls-col">
+            <h2 class="subheading-italic" style="font-size: 2.1rem; text-transform: uppercase;">
+              Subjects &amp; Study Logs
+            </h2>
+
+            <div class="subjects-filter-bar" role="tablist">
+              <button class="subject-pill pill-maths" onclick="filterSubjects('maths', this)">
+                Maths
+              </button>
+              <button class="subject-pill pill-neuroimaging" onclick="filterSubjects('neuroimaging', this)">
+                Neuroscience
+              </button>
+              <button class="subject-pill pill-methods" onclick="filterSubjects('methods', this)">
+                Research Methods
+              </button>
+              <button class="subject-pill pill-all active" onclick="filterSubjects('all', this)">
+                All Subjects (3)
+              </button>
+            </div>
+          </div>
+
+          <img
+            src="assets/doodle-school-of-fish.png"
+            alt="School of Fish Classroom Sticker"
+            class="sticker-img school-top-right-sticker"
+          />
+        </div>
+
+        <!-- Centered Subject Tables with Small Fish Stickers Swimming Around on the Left and Right sides -->
+        <div class="subjects-list-full" id="subjects-list-container">
+
+          <!-- 3 Small Fish Stickers Swimming Around the Subject Tables -->
+          <img
+            src="assets/fish-icon-1.png"
+            alt="Smiling scaly fish sticker"
+            class="swimming-fish-sticker nb-fish-1"
+          />
+          <img
+            src="assets/fish-icon-2.png"
+            alt="Slender striped fish sticker"
+            class="swimming-fish-sticker nb-fish-2"
+          />
+          <img
+            src="assets/fish-icon-3.png"
+            alt="Checkered fish sticker"
+            class="swimming-fish-sticker nb-fish-3"
+          />
+
+          <div id="excel-subjects-mount">
+          <!-- EXCEL_SUBJECTS_START -->
+          <div class="subject-group" data-subject="maths">
+            <div class="subject-group-header">
+              <div class="subject-title-wrap">
+                <h3 style="color: #2E5E88;">Maths</h3>
+              </div>
+              <span class="subject-meta">2 Chapters â€¢ Expandable Tables</span>
+            </div>
+
+            <div class="subsection-list">
+              <details class="subsection-item" open>
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    High school math resources- which is apparently super relevant (I forgot everything)
+                  </span>
+                  <span class="summary-count">3 Topics</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Application</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Map of mathematics</td>
+                        <td class="topic-def">Domain of Science YT Channel</td>
+                        <td class="topic-app">an fun 10 min video if you wanna get an overview of pure math and applied math, history, number systems, geometry, calculus and how it is applied. A good start to understand how everything is connected because the connections got overwhelming for me when the lectures assumed you already know of it.</td>
+                        <td class="topic-res"><a href="https://www.youtube.com/watch?v=OmJ-4B-mS-Y" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">All of math playlist</td>
+                        <td class="topic-def">Professor Dave Explains YT Channel</td>
+                        <td class="topic-app">all of high school with formulas and math in quick 10 min videos. Probably the best start to get a quick background of everything we will come across much more in detailed later.</td>
+                        <td class="topic-res"><a href="https://bit.ly/ProfDaveMath" target="_blank" rel="noopener" class="resource-link">Playlist / Link &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Lockdown mathematics playlist</td>
+                        <td class="topic-def">Infamous 3B1B YT Channel that you will see throughout</td>
+                        <td class="topic-app">made for highschoolers during lockdown, much longer 1 hr live recorded videos, but super informative in understanding derivations of each formula, with sums. Can get overwhelming because they move through concepts fast and the audience seems to always know the answer when i sometimes struggled.</td>
+                        <td class="topic-res"><a href="https://youtube.com/playlistlist=PLZHQObOWTQDP5CVelJJ1bNDouqrAhVPev&amp;si=OeUAHPE7lSzBrz3e" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <details class="subsection-item">
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Calculus
+                  </span>
+                  <span class="summary-count">5 Topics</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Application</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Introduction to calculus</td>
+                        <td class="topic-def">The math of things that change- How fast x is changing right now (derivatives) and how much has x changed in total (integrals)</td>
+                        <td class="topic-app">The basis for waves and signal processing for neuroscience</td>
+                        <td class="topic-res"><a href="https://youtu.be/DvTQ7h6-m5I?si=KWmjlYYdYcpi-8yt" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a> <a href="https://youtu.be/iyux-TVToRU?si=QaTiKaHQYi3jU0aj" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Limit</td>
+                        <td class="topic-def">describes a value that a function approaches as its impact gets closer and closer to a specific number. This tells what value you are heading towards, even though you might never land on it.</td>
+                        <td class="topic-app">Limits and continuity are the basis for calculus. While it can be difficult to understand or visualize, there are many animations online that do a great job vizualising its significance through its applications.</td>
+                        <td class="topic-res"><a href="https://youtube.com/playlist?list=PLSQl0a2vh4HBReS9_V4QYOnqP2aguahxS&amp;si=roYYKXMmlnFQ7Kc1" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Essence of calculus</td>
+                        <td class="topic-def">3B1B YT Channel</td>
+                        <td class="topic-app">A little more intense for me. Clearly explained logic behind rules of calculus</td>
+                        <td class="topic-res"><a href="https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&amp;si=ijVS9vPjWZ_97Wvv" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Differentiation of signal</td>
+                        <td class="topic-def">mathematical operation used to estimate the rate of change of continous time signal at any instant of time</td>
+                        <td class="topic-app">for fourier transform</td>
+                        <td class="topic-res">Signals and Systems by A. Nagoor Kani</td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Integration</td>
+                        <td class="topic-def">Inverse process of differentiation of identifying signal from differentiation</td>
+                        <td class="topic-app">for fourier transform</td>
+                        <td class="topic-res">Signals and Systems by A. Nagoor Kani</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="subject-group" data-subject="neuroimaging">
+            <div class="subject-group-header">
+              <div class="subject-title-wrap">
+                <h3 style="color: #4F6B46;">Neuroscience</h3>
+              </div>
+              <span class="subject-meta">2 Chapters â€¢ Expandable Tables</span>
+            </div>
+
+            <div class="subsection-list">
+              <details class="subsection-item" open>
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Electromagnetism
+                  </span>
+                  <span class="summary-count">2 Topics</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Applicaiton</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Map of Physics</td>
+                        <td class="topic-def">Domain of Science YT channel</td>
+                        <td class="topic-app">Get started with understanding world of physics cause evrything is connected and it was easier was me to get started with the understanding of how they are all connected.</td>
+                        <td class="topic-res"><a href="https://www.youtube.com/watch?v=ZihywtixUYo" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Electricity and Magnetism</td>
+                        <td class="topic-def">Lectures by Walter Lewin YT Channel</td>
+                        <td class="topic-app">MIT Physics lectures. The professor is mad good. He shows cool experiments that help me understand and remember better.</td>
+                        <td class="topic-res"><a href="https://youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&amp;si=o11KflscwlTE0Aib" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <details class="subsection-item">
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Signals and systems
+                  </span>
+                  <span class="summary-count">1 Topic</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Applicaiton</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Signal</td>
+                        <td class="topic-def">Any physical phenomenon that conveys or carries information. The physical quantity that varies with 1/more independent variable (such as time, spaial coordinates, pressure, temperature)</td>
+                        <td class="topic-app">Signal processing of neural data</td>
+                        <td class="topic-res">Signals and Systems by A. Nagoor Kani</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="subject-group" data-subject="methods">
+            <div class="subject-group-header">
+              <div class="subject-title-wrap">
+                <h3 style="color: #B58B24;">Research methods</h3>
+              </div>
+              <span class="subject-meta">2 Chapters â€¢ Expandable Tables</span>
+            </div>
+
+            <div class="subsection-list">
+              <details class="subsection-item" open>
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Eyetracking
+                  </span>
+                  <span class="summary-count">3 Topics</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Applicaiton</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Introduction to Eytracking</td>
+                        <td class="topic-def">&mdash;</td>
+                        <td class="topic-app">&mdash;</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Preprocessing eyetracking data</td>
+                        <td class="topic-def">&mdash;</td>
+                        <td class="topic-app">&mdash;</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Blink detection</td>
+                        <td class="topic-def">&mdash;</td>
+                        <td class="topic-app">&mdash;</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <details class="subsection-item">
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Transcranial Focused Ultrasound
+                  </span>
+                  <span class="summary-count">0 Topics</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Applicaiton</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="4" style="color: var(--ink-muted); font-style: italic;">No topics added under this chapter yet.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+          <!-- EXCEL_SUBJECTS_END -->
+          </div>
+
+        </div>
+
+        <!-- ================================================================
+             QUIZ SECTION (No Outer Cream Panel — Add Questions Below as You Learn!)
+             ================================================================ -->
+        <section class="quiz-section">
+          <!-- 3 Small Fish Stickers Placed Around the Memory Test -->
+          <img
+            src="assets/fish-icon-4.png"
+            alt="Small cute fish sticker"
+            class="swimming-fish-sticker quiz-fish-1"
+          />
+          <img
+            src="assets/fish-icon-5.png"
+            alt="Spiky dorsal fish sticker"
+            class="swimming-fish-sticker quiz-fish-2"
+          />
+          <img
+            src="assets/fish-icon-6.png"
+            alt="Striped angelfish sticker"
+            class="swimming-fish-sticker quiz-fish-3"
+          />
+
+          <div class="quiz-card">
+            <div class="quiz-header-row">
+              <div class="quiz-mascot-wrap">
+                <img
+                  src="assets/doodle-goldfish-starry.png"
+                  alt="Starry-eyed goldfish sticker mascot"
+                  class="sticker-img quiz-mascot-img"
+                />
+                <div>
+                  <h2 class="subheading-italic" style="font-size: 2.15rem; text-transform: uppercase; color: var(--scheme-cinnamon); margin-bottom: 0.7rem;">
+                    Memory Check
+                  </h2>
+                  <button class="btn-editorial" onclick="nextQuestion()">
+                    Next Question &rarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="quiz-question" class="quiz-question-text">
+              Loading question...
+            </div>
+
+            <div id="quiz-options" class="quiz-options"></div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================
+       SOLID FULL-WIDTH WHITE FOOTER PANEL:
+       Grey 'Current CV' Box on Left | Contact Sardine Tin in Bottom-Right Corner
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left-col">
+        <a href="Manjukashika%20CV.pdf" target="_blank" rel="noopener" class="btn-cv-link">
+          Current CV &nearr;
+        </a>
+        <div class="footer-credit-text">
+         The மீன் / mean project  ·  the doodles are original sketches by me  ·  used AI for website rendition 
+        </div>
+      </div>
+
+      <div class="footer-right-col">
+        <div class="contact-tin-wrapper">
+          <img
+            src="assets/contact-tin.png"
+            alt="Contact Sardine Tin Sticker"
+            class="contact-tin-img"
+          />
+
+          <!-- All 5 Contact Links in Distinct Colors Fitted Inside the Sardine Tin -->
+          <div class="tin-contact-box">
+            <a href="mailto:themeanproject.mk@gmail.com" class="tin-contact-item tin-link-1">
+              themeanproject.mk@gmail.com
+            </a>
+            <a href="mailto:manjukashika.kr@gmail.com" class="tin-contact-item tin-link-2">
+              manjukashika.kr@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/manjukashika-k-r" target="_blank" rel="noopener" class="tin-contact-item tin-link-3">
+              www.linkedin.com/in/manjukashika-k-r
+            </a>
+            <a href="https://orcid.org/0009-0002-1024-276X" target="_blank" rel="noopener" class="tin-contact-item tin-link-4">
+              https://orcid.org/0009-0002-1024-276X
+            </a>
+            <a href="https://github.com/manjukashika" target="_blank" rel="noopener" class="tin-contact-item tin-link-5">
+              https://github.com/manjukashika
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       CLIENT SCRIPT: Excel Sync, Page Switching, Subject Filtering & Quiz
+       ======================================================================== -->
+  <script src="goldfish-data.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script>
+    // 0. Live Excel Renderer (from goldfish-data.js locally OR direct GoldfishMemory.xlsx fetch on GitHub Pages)
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function formatResourceLinksJS(raw) {
+      if (!raw || !String(raw).trim()) {
+        return '<span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span>';
+      }
+      const trimmed = String(raw).trim();
+      const urlRegex = /https?:\/\/[^\s,;]+/g;
+      const matches = trimmed.match(urlRegex);
+      if (matches && matches.length > 0) {
+        return matches.map((u, idx) => {
+          const cleanUrl = u.replace(/[.,;)]+$/, '');
+          let label = 'Link';
+          if (/youtube\.com|youtu\.be/i.test(cleanUrl)) label = 'YouTube';
+          else if (/bit\.ly/i.test(cleanUrl)) label = 'Playlist / Link';
+          else if (/github\.com/i.test(cleanUrl)) label = 'GitHub';
+          else if (/mit\.edu/i.test(cleanUrl)) label = 'MIT OCW';
+          else {
+            try {
+              label = new URL(cleanUrl).hostname.replace(/^www\./, '');
+            } catch (e) {
+              label = 'Resource ' + (idx + 1);
+            }
+          }
+          return `<a href="${escapeHtml(cleanUrl)}" target="_blank" rel="noopener" class="resource-link">${escapeHtml(label)} &nearr;</a>`;
+        }).join(' ');
+      }
+      return escapeHtml(trimmed);
+    }
+
+    function renderSubjectsFromData(subjects) {
+      if (!Array.isArray(subjects) || subjects.length === 0) return;
+      const mount = document.getElementById('excel-subjects-mount');
+      if (!mount) return;
+
+      const htmlParts = subjects.map(subj => {
+        const chapters = Array.isArray(subj.chapters) ? subj.chapters : [];
+        const chapCount = chapters.length;
+        const subLabel = chapCount === 1 ? '1 Chapter • Expandable Table' : `${chapCount} Chapters • Expandable Tables`;
+        const hA = escapeHtml((subj.headers && subj.headers.A) || 'Concept');
+        const hB = escapeHtml((subj.headers && subj.headers.B) || 'Definition');
+        const hC = escapeHtml((subj.headers && subj.headers.C) || 'Application');
+        const hD = escapeHtml((subj.headers && subj.headers.D) || 'Resources');
+
+        const chaptersHtml = chapters.map((chap, cIdx) => {
+          const rows = Array.isArray(chap.rows) ? chap.rows : [];
+          const rowCount = rows.length;
+          const topicCountText = rowCount === 1 ? '1 Topic' : `${rowCount} Topics`;
+          const openAttr = cIdx === 0 ? ' open' : '';
+
+          const rowsHtml = rowCount === 0
+            ? `<tr><td colspan="4" style="color: var(--ink-muted); font-style: italic;">No topics added under this chapter yet.</td></tr>`
+            : rows.map(r => `
+                <tr>
+                  <td class="topic-name">${r.concept ? escapeHtml(r.concept) : '&mdash;'}</td>
+                  <td class="topic-def">${r.definition ? escapeHtml(r.definition) : '&mdash;'}</td>
+                  <td class="topic-app">${r.application ? escapeHtml(r.application) : '&mdash;'}</td>
+                  <td class="topic-res">${formatResourceLinksJS(r.resources)}</td>
+                </tr>
+              `).join('');
+
+          return `
+            <details class="subsection-item"${openAttr}>
+              <summary class="subsection-summary">
+                <span class="summary-left">
+                  <span class="summary-chevron">&#9654;</span>
+                  ${escapeHtml(chap.title)}
+                </span>
+                <span class="summary-count">${topicCountText}</span>
+              </summary>
+              <div class="table-scroll-wrap">
+                <table class="topic-table">
+                  <thead>
+                    <tr>
+                      <th>${hA}</th>
+                      <th>${hB}</th>
+                      <th>${hC}</th>
+                      <th>${hD}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${rowsHtml}
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          `;
+        }).join('');
+
+        return `
+          <div class="subject-group" data-subject="${escapeHtml(subj.key)}">
+            <div class="subject-group-header">
+              <div class="subject-title-wrap">
+                <h3 style="color: ${subj.color || '#C93B37'};">${escapeHtml(subj.sheetName)}</h3>
+              </div>
+              <span class="subject-meta">${subLabel}</span>
+            </div>
+            <div class="subsection-list">
+              ${chaptersHtml}
+            </div>
+          </div>
+        `;
+      });
+
+      mount.innerHTML = htmlParts.join('\n');
+
+      // Re-apply active subject filter if one is selected
+      const activePill = document.querySelector('.subject-pill.active');
+      if (activePill) {
+        const onclickAttr = activePill.getAttribute('onclick') || '';
+        const m = onclickAttr.match(/filterSubjects\('([^']+)'/);
+        if (m && m[1]) {
+          filterSubjects(m[1], activePill);
+        }
+      }
+    }
+
+    async function tryFetchLiveWorkbook() {
+      // 1. Render immediately from goldfish-data.js if present
+      if (window.GOLDFISH_EXCEL_DATA) {
+        renderSubjectsFromData(window.GOLDFISH_EXCEL_DATA);
+      }
+
+      // 2. When served over http/https (e.g., GitHub Pages or local web server), also fetch GoldfishMemory.xlsx directly
+      if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+        try {
+          const resp = await fetch('GoldfishMemory.xlsx?t=' + Date.now());
+          if (!resp.ok || typeof XLSX === 'undefined') return;
+          const buf = await resp.arrayBuffer();
+          const wb = XLSX.read(buf, { type: 'array', cellStyles: true });
+
+          const parsedSubjects = wb.SheetNames.map(sheetName => {
+            const ws = wb.Sheets[sheetName];
+            const merges = ws['!merges'] || [];
+            const mergedStartRows = new Set();
+            merges.forEach(m => {
+              if (m.s.c === 0 && m.e.c > 0 && m.s.r >= 2) {
+                mergedStartRows.add(m.s.r); // 0-indexed row
+              }
+            });
+
+            const rowsAoA = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+            const headers = { A: 'Concept', B: 'Definition', C: 'Application', D: 'Resources' };
+            if (rowsAoA.length >= 2) {
+              const r1 = rowsAoA[1] || [];
+              if (r1[0]) headers.A = String(r1[0]).trim();
+              if (r1[1]) headers.B = String(r1[1]).trim();
+              if (r1[2]) headers.C = String(r1[2]).trim();
+              if (r1[3]) headers.D = String(r1[3]).trim();
+            }
+
+            const chapters = [];
+            let currentChapter = null;
+
+            for (let r = 2; r < rowsAoA.length; r++) {
+              const rowCells = rowsAoA[r] || [];
+              const cA = String(rowCells[0] || '').trim();
+              const cB = String(rowCells[1] || '').trim();
+              const cC = String(rowCells[2] || '').trim();
+              const cD = String(rowCells[3] || '').trim();
+              if (!cA && !cB && !cC && !cD) continue;
+
+              const isMergedChapter = mergedStartRows.has(r);
+              if (isMergedChapter) {
+                currentChapter = { title: cA, rows: [] };
+                chapters.push(currentChapter);
+              } else {
+                if (!currentChapter) {
+                  currentChapter = { title: 'General Topics', rows: [] };
+                  chapters.push(currentChapter);
+                }
+                currentChapter.rows.push({
+                  concept: cA,
+                  definition: cB,
+                  application: cC,
+                  resources: cD
+                });
+              }
+            }
+
+            const lower = sheetName.trim().toLowerCase();
+            let key = lower.replace(/\s+/g, '-');
+            let color = '#2E5E88';
+            if (lower.includes('math')) { key = 'maths'; color = '#2E5E88'; }
+            else if (lower.includes('neuro')) { key = 'neuroimaging'; color = '#4F6B46'; }
+            else if (lower.includes('method')) { key = 'methods'; color = '#B58B24'; }
+
+            return {
+              sheetName: sheetName.trim(),
+              key,
+              color,
+              headers,
+              chapters
+            };
+          });
+
+          if (parsedSubjects.length > 0) {
+            renderSubjectsFromData(parsedSubjects);
+          }
+        } catch (err) {
+          // Fallback to goldfish-data.js / static HTML already rendered
+        }
+      }
+    }
+
+    // 1. Page Navigation (Home vs. Notebook)
+    function switchPage(pageKey, event) {
+      if (event) event.preventDefault();
+
+      const homeView = document.getElementById('view-home');
+      const goldfishView = document.getElementById('view-goldfish');
+      const links = document.querySelectorAll('.nav-link');
+
+      links.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-target') === pageKey);
+      });
+
+      if (pageKey === 'goldfish') {
+        homeView.classList.remove('active');
+        goldfishView.classList.add('active');
+        history.replaceState(null, '', '#notebook');
+      } else {
+        goldfishView.classList.remove('active');
+        homeView.classList.add('active');
+        history.replaceState(null, '', '#home');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Load initial tab from URL hash if present
+    window.addEventListener('DOMContentLoaded', () => {
+      tryFetchLiveWorkbook();
+      if (window.location.hash === '#notebook' || window.location.hash === '#goldfish-project') {
+        switchPage('goldfish');
+      }
+      renderQuizQuestion();
+    });
+
+    // 2. Filter Subject Blocks on the Notebook page
+    function filterSubjects(subjectKey, btn) {
+      document.querySelectorAll('.subject-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.subject-group').forEach(group => {
+        if (subjectKey === 'all' || group.getAttribute('data-subject') === subjectKey) {
+          group.style.display = 'block';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+    }
+
+    // =========================================================================
+    // 3. QUICK MULTIPLE CHOICE QUIZ QUESTIONS (ADD NEW QUESTIONS HERE!)
+    //    To add a new question as you learn, copy and paste one { ... }, block:
+    //      - question: 'Your question text here?'
+    //      - options: ['Choice A', 'Choice B', 'Choice C', 'Choice D']
+    //      - answerIndex: 0 for A, 1 for B, 2 for C, or 3 for D
+    // =========================================================================
+    const quizBank = [
+      {
+        question: 'In my perspective, what happens to an eigenvector when a matrix transformation hits it?',
+        options: [
+          'It gets stretched or squished, but never rotated off its span.',
+          'It always rotates by exactly 90 degrees in high dimensions.',
+          'Its determinant collapses to zero immediately.',
+          'It converts a time-series signal into sine waves.'
+        ],
+        answerIndex: 0
+      },
+      {
+        question: 'Why do we apply FDR or FWE corrections in whole-brain neuroimaging analysis?',
+        options: [
+          'To speed up Python matrix multiplication.',
+          'To control false positives across ~100,000 simultaneous voxel tests.',
+          'To realign participant head motion across scanner runs.',
+          'To increase the magnetic field strength of the scanner.'
+        ],
+        answerIndex: 1
+      },
+      {
+        question: 'Why do we convolve task events with the Hemodynamic Response Function (HRF)?',
+        options: [
+          'Because the blood-oxygen (BOLD) response peaks sluggishly ~5 seconds after neural firing.',
+          'Because neural action potentials take 10 minutes to travel across a synapse.',
+          'To convert structural MRI into diffusion tractography.',
+          'To anonymize participant facial features.'
+        ],
+        answerIndex: 0
+      },
+      {
+        question: 'How does preregistering an analysis plan help strengthen scientific validity?',
+        options: [
+          'It guarantees that every p-value will be below 0.001.',
+          'It locks hypotheses and pipelines before peeking at results, preventing p-hacking.',
+          'It doubles the scanner temporal resolution.',
+          'It replaces the need for control groups.'
+        ],
+        answerIndex: 1
+      }
+    ];
+
+    let currentQ = 0;
+    let answeredCurrent = false;
+
+    function renderQuizQuestion() {
+      const item = quizBank[currentQ];
+      answeredCurrent = false;
+
+      document.getElementById('quiz-question').textContent = item.question;
+
+      const optionsContainer = document.getElementById('quiz-options');
+      optionsContainer.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      item.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option-btn';
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${optText}</span>`;
+        btn.onclick = () => selectQuizAnswer(idx, btn);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function selectQuizAnswer(selectedIndex, clickedBtn) {
+      if (answeredCurrent) return;
+      answeredCurrent = true;
+
+      const item = quizBank[currentQ];
+      const allBtns = document.querySelectorAll('.quiz-option-btn');
+
+      allBtns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === item.answerIndex) {
+          btn.classList.add('correct');
+        }
+      });
+
+      if (selectedIndex !== item.answerIndex) {
+        clickedBtn.classList.add('wrong');
+      }
+    }
+
+    function nextQuestion() {
+      currentQ = (currentQ + 1) % quizBank.length;
+      renderQuizQuestion();
+    }
+  </script>
+</body>
+</html>
