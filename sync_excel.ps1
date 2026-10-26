@@ -58,6 +58,23 @@ function FormatResourceLinks([string]$raw) {
     }
 }
 
+function Resolve-AnswerIndex([string]$ansRaw, [string[]]$options) {
+    if ([string]::IsNullOrWhiteSpace($ansRaw)) { return 0 }
+    $clean = $ansRaw.Trim()
+    switch -Regex ($clean) {
+        '^[Aa]$|^1$' { return 0 }
+        '^[Bb]$|^2$' { return 1 }
+        '^[Cc]$|^3$' { return 2 }
+        '^[Dd]$|^4$' { return 3 }
+    }
+    for ($i = 0; $i -lt $options.Count; $i++) {
+        if ($options[$i].Trim().ToLower() -eq $clean.ToLower()) {
+            return $i
+        }
+    }
+    return 0
+}
+
 function Parse-GoldfishExcel {
     if (-not (Test-Path $excelPath)) {
         Write-Warning "GoldfishMemory.xlsx not found at $excelPath"
@@ -69,11 +86,11 @@ function Parse-GoldfishExcel {
     $zip = New-Object System.IO.Compression.ZipArchive($fs, [System.IO.Compression.ZipArchiveMode]::Read)
 
     try {
-        # 1. Shared Strings
+        # 1. Shared Strings (explicitly read as UTF8 so math symbols like ∑ never get garbled)
         $sharedStrings = @()
         $ssEntry = $zip.GetEntry('xl/sharedStrings.xml')
         if ($ssEntry) {
-            $sr = New-Object System.IO.StreamReader($ssEntry.Open())
+            $sr = New-Object System.IO.StreamReader($ssEntry.Open(), [System.Text.Encoding]::UTF8)
             $ssXml = [xml]$sr.ReadToEnd()
             $sr.Close()
             foreach ($si in $ssXml.sst.si) {
@@ -95,7 +112,7 @@ function Parse-GoldfishExcel {
         $xfTints = @{}
         $stylesEntry = $zip.GetEntry('xl/styles.xml')
         if ($stylesEntry) {
-            $sr = New-Object System.IO.StreamReader($stylesEntry.Open())
+            $sr = New-Object System.IO.StreamReader($stylesEntry.Open(), [System.Text.Encoding]::UTF8)
             $stylesXml = [xml]$sr.ReadToEnd()
             $sr.Close()
             $sIdx = 0
@@ -112,12 +129,12 @@ function Parse-GoldfishExcel {
 
         # 3. Workbook & Relationship mapping
         $wbEntry = $zip.GetEntry('xl/workbook.xml')
-        $sr = New-Object System.IO.StreamReader($wbEntry.Open())
+        $sr = New-Object System.IO.StreamReader($wbEntry.Open(), [System.Text.Encoding]::UTF8)
         $wbXml = [xml]$sr.ReadToEnd()
         $sr.Close()
 
         $relsEntry = $zip.GetEntry('xl/_rels/workbook.xml.rels')
-        $sr = New-Object System.IO.StreamReader($relsEntry.Open())
+        $sr = New-Object System.IO.StreamReader($relsEntry.Open(), [System.Text.Encoding]::UTF8)
         $relsXml = [xml]$sr.ReadToEnd()
         $sr.Close()
 
@@ -127,6 +144,7 @@ function Parse-GoldfishExcel {
         }
 
         $subjects = @()
+        $quizList = @()
 
         foreach ($sheet in $wbXml.workbook.sheets.sheet) {
             $sheetName = [string]$sheet.name
@@ -139,11 +157,61 @@ function Parse-GoldfishExcel {
             $sheetEntry = $zip.GetEntry($target)
             if (-not $sheetEntry) { continue }
 
-            $sr = New-Object System.IO.StreamReader($sheetEntry.Open())
+            $sr = New-Object System.IO.StreamReader($sheetEntry.Open(), [System.Text.Encoding]::UTF8)
             $sheetXml = [xml]$sr.ReadToEnd()
             $sr.Close()
 
-            # Collect merged cell row numbers
+            $keyLower = $sheetName.Trim().ToLower()
+
+            # Check if this sheet is the Quiz sheet
+            if ($keyLower -eq 'quiz') {
+                foreach ($row in $sheetXml.worksheet.sheetData.row) {
+                    $rowNum = [int]$row.r
+                    if ($rowNum -eq 1) { continue } # Skip header row (Question | A | B | C | D | correct option)
+
+                    $cells = @{}
+                    foreach ($c in $row.c) {
+                        $cellRef = [string]$c.r
+                        $col = $cellRef -replace '\d+', ''
+                        $val = ""
+                        if ($c.t -eq 's') {
+                            $idx = [int]$c.v
+                            if ($idx -ge 0 -and $idx -lt $sharedStrings.Count) {
+                                $val = $sharedStrings[$idx]
+                            }
+                        } elseif ($c.t -eq 'inlineStr' -and $c.is) {
+                            $val = $c.is.InnerText
+                        } elseif ($null -ne $c.v) {
+                            $val = [string]$c.v
+                        }
+                        if (-not [string]::IsNullOrWhiteSpace($val)) {
+                            $cells[$col] = $val.Trim()
+                        }
+                    }
+
+                    if (-not $cells.ContainsKey('A')) { continue }
+                    $qText = $cells['A']
+                    if ($qText.ToLower() -eq 'question') { continue }
+
+                    $optA = if ($cells['B']) { $cells['B'] } else { "" }
+                    $optB = if ($cells['C']) { $cells['C'] } else { "" }
+                    $optC = if ($cells['D']) { $cells['D'] } else { "" }
+                    $optD = if ($cells['E']) { $cells['E'] } else { "" }
+                    $ansRaw = if ($cells['F']) { $cells['F'] } else { "A" }
+
+                    $opts = @($optA, $optB, $optC, $optD)
+                    $ansIdx = Resolve-AnswerIndex -ansRaw $ansRaw -options $opts
+
+                    $quizList += [PSCustomObject]@{
+                        question    = $qText
+                        options     = $opts
+                        answerIndex = $ansIdx
+                    }
+                }
+                continue
+            }
+
+            # Otherwise parse as a Subject Sheet
             $mergedRows = @{}
             if ($sheetXml.worksheet.mergeCells -and $sheetXml.worksheet.mergeCells.mergeCell) {
                 foreach ($mc in $sheetXml.worksheet.mergeCells.mergeCell) {
@@ -242,8 +310,6 @@ function Parse-GoldfishExcel {
                 }
             }
 
-            # Map sheet name to subject key & color
-            $keyLower = $sheetName.Trim().ToLower()
             $subjKey = $keyLower -replace '\s+', '-'
             $colorCss = "#2E5E88"
             if ($keyLower -match 'math') {
@@ -266,7 +332,10 @@ function Parse-GoldfishExcel {
             }
         }
 
-        return $subjects
+        return [PSCustomObject]@{
+            subjects = $subjects
+            quiz     = $quizList
+        }
     } finally {
         $zip.Dispose()
         $fs.Close()
@@ -274,16 +343,20 @@ function Parse-GoldfishExcel {
 }
 
 function Update-WebsiteFiles {
-    $subjects = Parse-GoldfishExcel
-    if ($null -eq $subjects) { return }
+    $parsed = Parse-GoldfishExcel
+    if ($null -eq $parsed) { return }
 
+    $subjects = $parsed.subjects
+    $quizList = $parsed.quiz
     $timestamp = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
 
     # 1. Write goldfish-data.js (works on file:// and https://)
-    $jsonPayload = $subjects | ConvertTo-Json -Depth 10
+    $subjectsJson = ConvertTo-Json -InputObject @($subjects) -Depth 10
+    $quizJson     = ConvertTo-Json -InputObject @($quizList) -Depth 10
     $jsContent = @"
 // Auto-generated from GoldfishMemory.xlsx at $timestamp
-window.GOLDFISH_EXCEL_DATA = $jsonPayload;
+window.GOLDFISH_EXCEL_DATA = $subjectsJson;
+window.GOLDFISH_QUIZ_DATA = $quizJson;
 "@
     [System.IO.File]::WriteAllText($jsOutPath, $jsContent, [System.Text.Encoding]::UTF8)
 
@@ -373,12 +446,17 @@ window.GOLDFISH_EXCEL_DATA = $jsonPayload;
         $pattern = '(?s)(<!-- EXCEL_SUBJECTS_START -->).*?(<!-- EXCEL_SUBJECTS_END -->)'
         if ($htmlRaw -match $pattern) {
             $replacement = "`$1`r`n" + $sb.ToString().TrimEnd() + "`r`n          `$2"
-            $htmlUpdated = [regex]::Replace($htmlRaw, $pattern, $replacement)
-            [System.IO.File]::WriteAllText($htmlPath, $htmlUpdated, [System.Text.Encoding]::UTF8)
+            $htmlRaw = [regex]::Replace($htmlRaw, $pattern, $replacement)
         }
+        $quizPattern = '(?s)(// <!-- EXCEL_QUIZ_START -->).*?(// <!-- EXCEL_QUIZ_END -->)'
+        if ($htmlRaw -match $quizPattern) {
+            $quizReplacement = "`$1`r`n    let quizBank = $quizJson;`r`n    `$2"
+            $htmlRaw = [regex]::Replace($htmlRaw, $quizPattern, $quizReplacement)
+        }
+        [System.IO.File]::WriteAllText($htmlPath, $htmlRaw, [System.Text.Encoding]::UTF8)
     }
 
-    Write-Host "[$timestamp] Synced GoldfishMemory.xlsx -> goldfish-data.js & index.html ($($subjects.Count) sheets)"
+    Write-Host "[$timestamp] Synced GoldfishMemory.xlsx -> goldfish-data.js & index.html ($($subjects.Count) subject sheets, $($quizList.Count) quiz questions)"
 }
 
 Update-WebsiteFiles

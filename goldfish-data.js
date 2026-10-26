@@ -1,5 +1,46 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-24 18:37:10
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-26 22:52:08
 window.GOLDFISH_EXCEL_DATA = [
+    {
+        "sheetName":  "Neuroscience",
+        "key":  "neuroimaging",
+        "color":  "#4F6B46",
+        "headers":  {
+                        "C":  "Applicaiton",
+                        "D":  "Resources",
+                        "B":  "Definition",
+                        "A":  "Concept"
+                    },
+        "chapters":  [
+                         {
+                             "title":  "Electromagnetism",
+                             "rows":  [
+                                          {
+                                              "concept":  "Map of Physics",
+                                              "definition":  "Domain of Science YT channel",
+                                              "application":  "Get started with understanding world of physics cause evrything is connected and it was easier was me to get started with the understanding of how they are all connected.",
+                                              "resources":  "https://www.youtube.com/watch?v=ZihywtixUYo"
+                                          },
+                                          {
+                                              "concept":  "Electricity and Magnetism",
+                                              "definition":  "Lectures by Walter Lewin YT Channel",
+                                              "application":  "MIT Physics lectures. The professor is mad good. He shows cool experiments that help me understand and remember better.",
+                                              "resources":  "https://youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j\u0026si=o11KflscwlTE0Aib"
+                                          }
+                                      ]
+                         },
+                         {
+                             "title":  "Signals and systems",
+                             "rows":  [
+                                          {
+                                              "concept":  "Signal",
+                                              "definition":  "Any physical phenomenon that conveys or carries information. The physical quantity that varies with 1/more independent variable (such as time, spaial coordinates, pressure, temperature)",
+                                              "application":  "Signal processing of neural data",
+                                              "resources":  "Signals and Systems by A. Nagoor Kani"
+                                          }
+                                      ]
+                         }
+                     ]
+    },
     {
         "sheetName":  "Maths",
         "key":  "maths",
@@ -17,7 +58,7 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "Map of mathematics",
                                               "definition":  "Domain of Science YT Channel",
-                                              "application":  "an fun 10 min video if you wanna get an overview of pure math and applied math, history, number systems, geometry, calculus and how it is applied. A good start to understand how everything is connected because the connections got overwhelming for me when the lectures assumed you already know of it.",
+                                              "application":  "fun 10 min video to get an overview of pure math and applied math, history, number systems, geometry, calculus and how it is applied. A good start to understand how everything is connected because the connections got overwhelming for me when the lectures assumed you already know of it.",
                                               "resources":  "https://www.youtube.com/watch?v=OmJ-4B-mS-Y"
                                           },
                                           {
@@ -68,45 +109,39 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "resources":  "Signals and Systems by A. Nagoor Kani"
                                           }
                                       ]
-                         }
-                     ]
-    },
-    {
-        "sheetName":  "Neuroscience",
-        "key":  "neuroimaging",
-        "color":  "#4F6B46",
-        "headers":  {
-                        "C":  "Applicaiton",
-                        "D":  "Resources",
-                        "B":  "Definition",
-                        "A":  "Concept"
-                    },
-        "chapters":  [
-                         {
-                             "title":  "Electromagnetism",
-                             "rows":  [
-                                          {
-                                              "concept":  "Map of Physics",
-                                              "definition":  "Domain of Science YT channel",
-                                              "application":  "Get started with understanding world of physics cause evrything is connected and it was easier was me to get started with the understanding of how they are all connected.",
-                                              "resources":  "https://www.youtube.com/watch?v=ZihywtixUYo"
-                                          },
-                                          {
-                                              "concept":  "Electricity and Magnetism",
-                                              "definition":  "Lectures by Walter Lewin YT Channel",
-                                              "application":  "MIT Physics lectures. The professor is mad good. He shows cool experiments that help me understand and remember better.",
-                                              "resources":  "https://youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j\u0026si=o11KflscwlTE0Aib"
-                                          }
-                                      ]
                          },
                          {
-                             "title":  "Signals and systems",
+                             "title":  "Master statistics \u0026 machine learning: intuition, math, code [Mike x Cohen udemy course]",
                              "rows":  [
                                           {
-                                              "concept":  "Signal",
-                                              "definition":  "Any physical phenomenon that conveys or carries information. The physical quantity that varies with 1/more independent variable (such as time, spaial coordinates, pressure, temperature)",
-                                              "application":  "Signal processing of neural data",
-                                              "resources":  "Signals and Systems by A. Nagoor Kani"
+                                              "concept":  "Central tendency",
+                                              "definition":  "mean, median and mode",
+                                              "application":  "basic",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Dispersion",
+                                              "definition":  "variance and standard deviation",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Statistical moments",
+                                              "definition":  "mean, variance, skewness and kurtosis",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Shannon entropy",
+                                              "definition":  "Shannon entropy is defined as the average rate at which information is produced by a stochastic source of data, where higher entropy indicates greater information content from new values. It is mathematically represented as S(X) = −∑ p(xi) log2(p(xi)), with p(xi) being the probability of obtaining a value xi. [defintion from ScienceDirect]",
+                                              "application":  "Basis of engineering stats",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Z normalization",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
                                           }
                                       ]
                          }
@@ -153,5 +188,27 @@ window.GOLDFISH_EXCEL_DATA = [
                                       ]
                          }
                      ]
+    }
+];
+window.GOLDFISH_QUIZ_DATA = [
+    {
+        "question":  "Why do I need variance when SD is easier to interpret? [Mike x Cohen]",
+        "options":  [
+                        "For aesthetic purposes",
+                        "Squared counterpart essential for statistics and complex maths",
+                        "Standard deviation is biased",
+                        "Variance is a completely different value from standard deviation"
+                    ],
+        "answerIndex":  1
+    },
+    {
+        "question":  "What is mean?",
+        "options":  [
+                        "Fish",
+                        "Average",
+                        "Top score",
+                        "Outlier"
+                    ],
+        "answerIndex":  1
     }
 ];

@@ -1101,26 +1101,37 @@
        (Measured compartment: X = 10%..58.9%, Y = 23%..82.2%) */
     .tin-contact-box {
       position: absolute;
-      left: 11.5%;
-      top: 24%;
-      width: 46.5%;
-      height: 56%;
+      left: 14.2%;
+      top: 22.5%;
+      width: 44.5%;
+      height: 58%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 0.32rem;
-      padding: 0.25rem 0.5rem;
+      gap: 0.34rem;
+      padding: 0.25rem 0.45rem;
       z-index: 5;
       overflow: hidden;
       line-height: 1.3;
     }
 
+    .tin-contact-heading {
+      font-family: var(--font-subheading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-style: italic;
+      color: #1E1D1B;
+      line-height: 1.2;
+      margin-bottom: 0.12rem;
+    }
+
     .tin-contact-item {
       display: block;
       font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 700;
-      line-height: 1.32;
+      font-size: 0.96rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #1E1D1B;
       text-decoration: none;
       white-space: nowrap;
       transition: transform 0.15s ease, opacity 0.15s ease;
@@ -1129,64 +1140,207 @@
     .tin-contact-item:hover {
       transform: translateX(3px);
       text-decoration: underline;
-      opacity: 0.85;
+      opacity: 0.75;
     }
 
-    /* Distinct palette colors for each link inside the sardine tin */
-    .tin-link-1 { color: #D1433F; } /* Coral Red */
-    .tin-link-2 { color: #C24570; } /* Cinnamon Satin */
-    .tin-link-3 { color: #2474B5; } /* Sky Blue Deep */
-    .tin-link-4 { color: #2C825E; } /* Sage Green Deep */
-    .tin-link-5 { color: #624BC4; } /* Max Blue Purple */
+    .tin-icons-row {
+      display: flex;
+      align-items: center;
+      gap: 1.45rem;
+      margin-top: 0.45rem;
+    }
 
-    /* Responsive adjustments */
+    .tin-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #1E1D1B;
+      text-decoration: none;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .tin-icon-link svg {
+      width: 31px;
+      height: 31px;
+      display: block;
+    }
+
+    .tin-icon-link:hover {
+      transform: translateY(-2px) scale(1.08);
+      opacity: 0.8;
+    }
+
+    /* ==========================================================================
+       MOBILE & TABLET RESPONSIVE ADJUSTMENTS (Laptop > 960px stays 100% identical)
+       ========================================================================== */
     @media (max-width: 960px) {
       .site-header {
-        padding: 1rem 1.5rem;
-        min-height: 100px;
+        padding: 0.85rem 1.15rem;
+        min-height: 82px;
+      }
+      .nav-text-links {
+        gap: 1.35rem;
+      }
+      .nav-link {
+        font-size: 1.05rem;
       }
       .brand-logo-sticker {
-        height: 68px;
+        height: 62px;
       }
       .page-container {
-        padding: 1.5rem 1.25rem 4rem;
+        padding: 1rem 1rem 2.5rem;
       }
-      .home-combined-box {
-        grid-template-columns: 1fr;
+
+      /* Hide the outer margin-swimming fish on narrow phone screens so they never get cut off or overlap text */
+      .swimming-fish-sticker {
+        display: none;
       }
+
+      .home-combined-section {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Girl sticker sits cleanly centered above the About Me box on mobile */
+      .girl-sticker-overlap {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 220px;
+        margin: 0 auto -18px;
+        z-index: 8;
+      }
+
       .about-me-col,
       .goldfish-diary-col {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding: 1.75rem 1.35rem;
+        min-height: auto;
         border-left: none;
       }
+
       .goldfish-diary-col {
         border-top: 1.5px solid #C8CCD2;
       }
-      .girl-sticker-overlap,
+
+      /* Suit fish sticker sits cleanly centered right below the Goldfish Diary box on mobile */
       .suit-fish-sticker-overlap {
-        position: static;
-        transform: none;
-        margin: 1.5rem auto 0;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 155px;
+        margin: -12px auto 0;
+        z-index: 8;
       }
-      .notebook-top-bar,
-      .footer-inner {
+
+      /* Notebook top bar & School of Fish sticker on mobile */
+      .notebook-top-bar {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
       }
+
       .school-top-right-sticker {
-        align-self: flex-end;
-        margin-top: 0;
+        width: 220px;
+        align-self: center;
+        margin: 0.25rem auto 0;
       }
-      .credentials-grid,
+
+      .subject-group-header {
+        padding: 0.95rem 1.15rem;
+        flex-wrap: wrap;
+      }
+
+      .subsection-list {
+        padding: 0.85rem 0.85rem 1.1rem;
+      }
+
+      .topic-table th,
+      .topic-table td {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      /* Quiz section on mobile */
+      .quiz-section {
+        margin-top: 2rem;
+      }
+
+      .quiz-card {
+        padding: 1.15rem 1.15rem 1.35rem;
+      }
+
+      .quiz-mascot-wrap {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .quiz-mascot-img {
+        width: 115px;
+        margin-top: -1.2rem;
+        margin-bottom: -0.5rem;
+      }
+
       .quiz-options {
         grid-template-columns: 1fr;
       }
+
+      /* Footer & Sardine Tin on mobile */
+      .footer-inner {
+        flex-direction: column;
+        align-items: stretch;
+        padding-left: 0;
+      }
+
+      .footer-left-col {
+        padding: 1.5rem 1.25rem 0.75rem;
+        gap: 0.85rem;
+      }
+
+      .footer-right-col {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 0;
+        padding-top: 12px;
+      }
+
       .contact-tin-wrapper {
         width: 100%;
+        max-width: 440px;
+        margin-top: 0;
+        margin-right: -8px;
+        margin-bottom: -10px;
       }
+
+      .tin-contact-box {
+        left: 14%;
+        top: 22%;
+        width: 45%;
+        height: 58%;
+        gap: 0.22rem;
+        padding: 0.15rem 0.25rem;
+      }
+
+      .tin-contact-heading {
+        font-size: clamp(0.8rem, 3.4vw, 1.05rem);
+        margin-bottom: 0.05rem;
+      }
+
       .tin-contact-item {
-        font-size: 0.64rem;
+        font-size: clamp(0.6rem, 2.5vw, 0.82rem);
+      }
+
+      .tin-icons-row {
+        gap: 0.9rem;
+        margin-top: 0.2rem;
+      }
+
+      .tin-icon-link svg {
+        width: 21px;
+        height: 21px;
       }
     }
   </style>
@@ -1271,8 +1425,9 @@
           <div class="about-me-col">
             <h2 class="section-heading">About Me</h2>
             <p class="prose-text">
-              Hey!
-              I am Manju Kashika, a Cognitive Neuroscience graduate who really likes research and art. After my BSc Psychology from India, switching to a more coding, stats and anatomy focused MSc Cognitive Neuroscience course in the UK was a pain in the tail. I also forget things. Not a great combination for someone aspiring to be a researcher. <br> <br> The மீன் / Mean project is for me to document the process of figuring out advanced mathematics, statistics, physics for neuroscience research application, for my own goldfish memory and other fellow fish floating through space tryna explore the intricacies of sciences. I am hoping to put my art, research skills and blind perseverance to making this work for myself and hopefully for a few others. WISH ME LUCK. T_T          </p>
+              Hey! I am Manju Kashika, a Cognitive Neuroscience graduate who really likes research and art. I completed my BSc Psychology from India and switched to a more maths, coding and anatomy focused MSc Cognitive Neuroscience course in the UK. This transition was a pain in the tail. I also forget things. Not a great combination for someone aspiring to be a researcher.<br /><br />
+              The மீன் / Mean project is for me to document the process of figuring out advanced mathematics, statistics, physics for neuroscience research application, for my own goldfish memory and other fellow fish floating trying to explore the intricacies of sciences. I am hoping to put my art, research skills and blind perseverance to making this work for myself and hopefully for a few others.<br /> WISH ME LUCK. T_T
+            </p>
           </div>
 
           <!-- ================================================================
@@ -1281,7 +1436,7 @@
           <div class="goldfish-diary-col">
             <h2 class="section-heading">Goldfish Diary</h2>
             <p class="prose-text">
-              Despite popular myth, goldfish can apparently hold onto memories for months— but I have realized my long-term memory is lacking the length (ironic that my research interest is memory). The goldfish diary is my public study log and self-curated curriculum. While ONE textbook or online course is not gonna do it all, it is all out there and this journey is gonna take a long time. Should be a fun new nerd adventure. 
+              Despite popular myth, goldfish can apparently hold onto memories for months— but I have realized my long-term memory is lacking the length (ironic that my research interest is memory). The goldfish diary is my public study log and self-curated curriculum. While ONE textbook or online course is not gonna do it all, it is all out there and this journey is gonna take a long time. Should be a fun new nerd adventure.
             </p>
             <div class="panel-action-row">
               <button class="btn-editorial" onclick="switchPage('goldfish', event)">
@@ -1362,12 +1517,87 @@
 
           <div id="excel-subjects-mount">
           <!-- EXCEL_SUBJECTS_START -->
+          <div class="subject-group" data-subject="neuroimaging">
+            <div class="subject-group-header">
+              <div class="subject-title-wrap">
+                <h3 style="color: #4F6B46;">Neuroscience</h3>
+              </div>
+              <span class="subject-meta">2 Chapters â€¢ Expandable Tables</span>
+            </div>
+
+            <div class="subsection-list">
+              <details class="subsection-item" open>
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Electromagnetism
+                  </span>
+                  <span class="summary-count">2 Topics</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Applicaiton</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Map of Physics</td>
+                        <td class="topic-def">Domain of Science YT channel</td>
+                        <td class="topic-app">Get started with understanding world of physics cause evrything is connected and it was easier was me to get started with the understanding of how they are all connected.</td>
+                        <td class="topic-res"><a href="https://www.youtube.com/watch?v=ZihywtixUYo" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Electricity and Magnetism</td>
+                        <td class="topic-def">Lectures by Walter Lewin YT Channel</td>
+                        <td class="topic-app">MIT Physics lectures. The professor is mad good. He shows cool experiments that help me understand and remember better.</td>
+                        <td class="topic-res"><a href="https://youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&amp;si=o11KflscwlTE0Aib" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <details class="subsection-item">
+                <summary class="subsection-summary">
+                  <span class="summary-left">
+                    <span class="summary-chevron">&#9654;</span>
+                    Signals and systems
+                  </span>
+                  <span class="summary-count">1 Topic</span>
+                </summary>
+                <div class="table-scroll-wrap">
+                  <table class="topic-table">
+                    <thead>
+                      <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Applicaiton</th>
+                        <th>Resources</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="topic-name">Signal</td>
+                        <td class="topic-def">Any physical phenomenon that conveys or carries information. The physical quantity that varies with 1/more independent variable (such as time, spaial coordinates, pressure, temperature)</td>
+                        <td class="topic-app">Signal processing of neural data</td>
+                        <td class="topic-res">Signals and Systems by A. Nagoor Kani</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
           <div class="subject-group" data-subject="maths">
             <div class="subject-group-header">
               <div class="subject-title-wrap">
                 <h3 style="color: #2E5E88;">Maths</h3>
               </div>
-              <span class="subject-meta">2 Chapters â€¢ Expandable Tables</span>
+              <span class="subject-meta">3 Chapters â€¢ Expandable Tables</span>
             </div>
 
             <div class="subsection-list">
@@ -1393,7 +1623,7 @@
                       <tr>
                         <td class="topic-name">Map of mathematics</td>
                         <td class="topic-def">Domain of Science YT Channel</td>
-                        <td class="topic-app">an fun 10 min video if you wanna get an overview of pure math and applied math, history, number systems, geometry, calculus and how it is applied. A good start to understand how everything is connected because the connections got overwhelming for me when the lectures assumed you already know of it.</td>
+                        <td class="topic-app">fun 10 min video to get an overview of pure math and applied math, history, number systems, geometry, calculus and how it is applied. A good start to understand how everything is connected because the connections got overwhelming for me when the lectures assumed you already know of it.</td>
                         <td class="topic-res"><a href="https://www.youtube.com/watch?v=OmJ-4B-mS-Y" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
                       </tr>
                       <tr>
@@ -1465,59 +1695,13 @@
                   </table>
                 </div>
               </details>
-            </div>
-          </div>
-          <div class="subject-group" data-subject="neuroimaging">
-            <div class="subject-group-header">
-              <div class="subject-title-wrap">
-                <h3 style="color: #4F6B46;">Neuroscience</h3>
-              </div>
-              <span class="subject-meta">2 Chapters â€¢ Expandable Tables</span>
-            </div>
-
-            <div class="subsection-list">
-              <details class="subsection-item" open>
-                <summary class="subsection-summary">
-                  <span class="summary-left">
-                    <span class="summary-chevron">&#9654;</span>
-                    Electromagnetism
-                  </span>
-                  <span class="summary-count">2 Topics</span>
-                </summary>
-                <div class="table-scroll-wrap">
-                  <table class="topic-table">
-                    <thead>
-                      <tr>
-                        <th>Concept</th>
-                        <th>Definition</th>
-                        <th>Applicaiton</th>
-                        <th>Resources</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="topic-name">Map of Physics</td>
-                        <td class="topic-def">Domain of Science YT channel</td>
-                        <td class="topic-app">Get started with understanding world of physics cause evrything is connected and it was easier was me to get started with the understanding of how they are all connected.</td>
-                        <td class="topic-res"><a href="https://www.youtube.com/watch?v=ZihywtixUYo" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
-                      </tr>
-                      <tr>
-                        <td class="topic-name">Electricity and Magnetism</td>
-                        <td class="topic-def">Lectures by Walter Lewin YT Channel</td>
-                        <td class="topic-app">MIT Physics lectures. The professor is mad good. He shows cool experiments that help me understand and remember better.</td>
-                        <td class="topic-res"><a href="https://youtube.com/playlist?list=PLyQSN7X0ro2314mKyUiOILaOC2hk6Pc3j&amp;si=o11KflscwlTE0Aib" target="_blank" rel="noopener" class="resource-link">YouTube &nearr;</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </details>
               <details class="subsection-item">
                 <summary class="subsection-summary">
                   <span class="summary-left">
                     <span class="summary-chevron">&#9654;</span>
-                    Signals and systems
+                    Master statistics &amp; machine learning: intuition, math, code [Mike x Cohen udemy course]
                   </span>
-                  <span class="summary-count">1 Topic</span>
+                  <span class="summary-count">5 Topics</span>
                 </summary>
                 <div class="table-scroll-wrap">
                   <table class="topic-table">
@@ -1525,16 +1709,40 @@
                       <tr>
                         <th>Concept</th>
                         <th>Definition</th>
-                        <th>Applicaiton</th>
+                        <th>Application</th>
                         <th>Resources</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="topic-name">Signal</td>
-                        <td class="topic-def">Any physical phenomenon that conveys or carries information. The physical quantity that varies with 1/more independent variable (such as time, spaial coordinates, pressure, temperature)</td>
-                        <td class="topic-app">Signal processing of neural data</td>
-                        <td class="topic-res">Signals and Systems by A. Nagoor Kani</td>
+                        <td class="topic-name">Central tendency</td>
+                        <td class="topic-def">mean, median and mode</td>
+                        <td class="topic-app">basic</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Dispersion</td>
+                        <td class="topic-def">variance and standard deviation</td>
+                        <td class="topic-app">&mdash;</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Statistical moments</td>
+                        <td class="topic-def">mean, variance, skewness and kurtosis</td>
+                        <td class="topic-app">&mdash;</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Shannon entropy</td>
+                        <td class="topic-def">Shannon entropy is defined as the average rate at which information is produced by a stochastic source of data, where higher entropy indicates greater information content from new values. It is mathematically represented as S(X) = −∑ p(xi) log2(p(xi)), with p(xi) being the probability of obtaining a value xi. [defintion from ScienceDirect]</td>
+                        <td class="topic-app">Basis of engineering stats</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
+                      </tr>
+                      <tr>
+                        <td class="topic-name">Z normalization</td>
+                        <td class="topic-def">&mdash;</td>
+                        <td class="topic-app">&mdash;</td>
+                        <td class="topic-res"><span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span></td>
                       </tr>
                     </tbody>
                   </table>
@@ -1701,23 +1909,38 @@
             class="contact-tin-img"
           />
 
-          <!-- All 5 Contact Links in Distinct Colors Fitted Inside the Sardine Tin -->
+          <!-- Bold 'Contact' Heading + 2 Black Email Lines + GitHub, ORCID & LinkedIn Logos Inside the Sardine Tin -->
           <div class="tin-contact-box">
-            <a href="mailto:themeanproject.mk@gmail.com" class="tin-contact-item tin-link-1">
+            <div class="tin-contact-heading">Contact</div>
+            <a href="mailto:themeanproject.mk@gmail.com" class="tin-contact-item">
               themeanproject.mk@gmail.com
             </a>
-            <a href="mailto:manjukashika.kr@gmail.com" class="tin-contact-item tin-link-2">
+            <a href="mailto:manjukashika.kr@gmail.com" class="tin-contact-item">
               manjukashika.kr@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/manjukashika-k-r" target="_blank" rel="noopener" class="tin-contact-item tin-link-3">
-              www.linkedin.com/in/manjukashika-k-r
-            </a>
-            <a href="https://orcid.org/0009-0002-1024-276X" target="_blank" rel="noopener" class="tin-contact-item tin-link-4">
-              https://orcid.org/0009-0002-1024-276X
-            </a>
-            <a href="https://github.com/manjukashika" target="_blank" rel="noopener" class="tin-contact-item tin-link-5">
-              https://github.com/manjukashika
-            </a>
+
+            <div class="tin-icons-row">
+              <!-- GitHub Logo -->
+              <a href="https://github.com/manjukashika" target="_blank" rel="noopener" class="tin-icon-link" title="GitHub" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0.3C5.37 0.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.7.82.58C20.56 22.1 24 17.6 24 12.3 24 5.67 18.63 0.3 12 0.3z"/>
+                </svg>
+              </a>
+
+              <!-- ORCID Logo -->
+              <a href="https://orcid.org/0009-0002-1024-276X" target="_blank" rel="noopener" class="tin-icon-link" title="ORCID" aria-label="ORCID">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/>
+                </svg>
+              </a>
+
+              <!-- LinkedIn Logo -->
+              <a href="https://www.linkedin.com/in/manjukashika-k-r" target="_blank" rel="noopener" class="tin-icon-link" title="LinkedIn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1855,10 +2078,26 @@
       }
     }
 
+    function resolveAnswerIndexJS(ansRaw, options) {
+      if (!ansRaw) return 0;
+      const clean = String(ansRaw).trim();
+      if (/^[Aa]$|^1$/.test(clean)) return 0;
+      if (/^[Bb]$|^2$/.test(clean)) return 1;
+      if (/^[Cc]$|^3$/.test(clean)) return 2;
+      if (/^[Dd]$|^4$/.test(clean)) return 3;
+      const idx = options.findIndex(o => String(o).trim().toLowerCase() === clean.toLowerCase());
+      return idx >= 0 ? idx : 0;
+    }
+
     async function tryFetchLiveWorkbook() {
       // 1. Render immediately from goldfish-data.js if present
       if (window.GOLDFISH_EXCEL_DATA) {
         renderSubjectsFromData(window.GOLDFISH_EXCEL_DATA);
+      }
+      if (Array.isArray(window.GOLDFISH_QUIZ_DATA) && window.GOLDFISH_QUIZ_DATA.length > 0) {
+        quizBank = window.GOLDFISH_QUIZ_DATA;
+        currentQ = 0;
+        renderQuizQuestion();
       }
 
       // 2. When served over http/https (e.g., GitHub Pages or local web server), also fetch GoldfishMemory.xlsx directly
@@ -1869,8 +2108,37 @@
           const buf = await resp.arrayBuffer();
           const wb = XLSX.read(buf, { type: 'array', cellStyles: true });
 
-          const parsedSubjects = wb.SheetNames.map(sheetName => {
+          const parsedSubjects = [];
+          const parsedQuiz = [];
+
+          wb.SheetNames.forEach(sheetName => {
             const ws = wb.Sheets[sheetName];
+            const lower = sheetName.trim().toLowerCase();
+
+            // Parse 'Quiz' sheet
+            if (lower === 'quiz') {
+              const quizRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+              for (let r = 1; r < quizRows.length; r++) {
+                const qRow = quizRows[r] || [];
+                const qText = String(qRow[0] || '').trim();
+                if (!qText || qText.toLowerCase() === 'question') continue;
+                const opts = [
+                  String(qRow[1] || '').trim(),
+                  String(qRow[2] || '').trim(),
+                  String(qRow[3] || '').trim(),
+                  String(qRow[4] || '').trim()
+                ];
+                const ansIdx = resolveAnswerIndexJS(qRow[5], opts);
+                parsedQuiz.push({
+                  question: qText,
+                  options: opts,
+                  answerIndex: ansIdx
+                });
+              }
+              return;
+            }
+
+            // Parse Subject sheet
             const merges = ws['!merges'] || [];
             const mergedStartRows = new Set();
             merges.forEach(m => {
@@ -1918,24 +2186,28 @@
               }
             }
 
-            const lower = sheetName.trim().toLowerCase();
             let key = lower.replace(/\s+/g, '-');
             let color = '#2E5E88';
             if (lower.includes('math')) { key = 'maths'; color = '#2E5E88'; }
             else if (lower.includes('neuro')) { key = 'neuroimaging'; color = '#4F6B46'; }
             else if (lower.includes('method')) { key = 'methods'; color = '#B58B24'; }
 
-            return {
+            parsedSubjects.push({
               sheetName: sheetName.trim(),
               key,
               color,
               headers,
               chapters
-            };
+            });
           });
 
           if (parsedSubjects.length > 0) {
             renderSubjectsFromData(parsedSubjects);
+          }
+          if (parsedQuiz.length > 0) {
+            quizBank = parsedQuiz;
+            currentQ = 0;
+            renderQuizQuestion();
           }
         } catch (err) {
           // Fallback to goldfish-data.js / static HTML already rendered
@@ -1992,59 +2264,43 @@
     }
 
     // =========================================================================
-    // 3. QUICK MULTIPLE CHOICE QUIZ QUESTIONS (ADD NEW QUESTIONS HERE!)
-    //    To add a new question as you learn, copy and paste one { ... }, block:
-    //      - question: 'Your question text here?'
-    //      - options: ['Choice A', 'Choice B', 'Choice C', 'Choice D']
-    //      - answerIndex: 0 for A, 1 for B, 2 for C, or 3 for D
+    // 3. QUICK MULTIPLE CHOICE QUIZ QUESTIONS (SYNCED FROM 'Quiz' SHEET IN GoldfishMemory.xlsx)
     // =========================================================================
-    const quizBank = [
-      {
-        question: 'In my perspective, what happens to an eigenvector when a matrix transformation hits it?',
-        options: [
-          'It gets stretched or squished, but never rotated off its span.',
-          'It always rotates by exactly 90 degrees in high dimensions.',
-          'Its determinant collapses to zero immediately.',
-          'It converts a time-series signal into sine waves.'
-        ],
-        answerIndex: 0
-      },
-      {
-        question: 'Why do we apply FDR or FWE corrections in whole-brain neuroimaging analysis?',
-        options: [
-          'To speed up Python matrix multiplication.',
-          'To control false positives across ~100,000 simultaneous voxel tests.',
-          'To realign participant head motion across scanner runs.',
-          'To increase the magnetic field strength of the scanner.'
-        ],
-        answerIndex: 1
-      },
-      {
-        question: 'Why do we convolve task events with the Hemodynamic Response Function (HRF)?',
-        options: [
-          'Because the blood-oxygen (BOLD) response peaks sluggishly ~5 seconds after neural firing.',
-          'Because neural action potentials take 10 minutes to travel across a synapse.',
-          'To convert structural MRI into diffusion tractography.',
-          'To anonymize participant facial features.'
-        ],
-        answerIndex: 0
-      },
-      {
-        question: 'How does preregistering an analysis plan help strengthen scientific validity?',
-        options: [
-          'It guarantees that every p-value will be below 0.001.',
-          'It locks hypotheses and pipelines before peeking at results, preventing p-hacking.',
-          'It doubles the scanner temporal resolution.',
-          'It replaces the need for control groups.'
-        ],
-        answerIndex: 1
-      }
-    ];
+    // <!-- EXCEL_QUIZ_START -->
+    let quizBank = [
+    {
+        "question":  "Why do I need variance when SD is easier to interpret? [Mike x Cohen]",
+        "options":  [
+                        "For aesthetic purposes",
+                        "Squared counterpart essential for statistics and complex maths",
+                        "Standard deviation is biased",
+                        "Variance is a completely different value from standard deviation"
+                    ],
+        "answerIndex":  1
+    },
+    {
+        "question":  "What is mean?",
+        "options":  [
+                        "Fish",
+                        "Average",
+                        "Top score",
+                        "Outlier"
+                    ],
+        "answerIndex":  1
+    }
+];
+    // <!-- EXCEL_QUIZ_END -->
 
     let currentQ = 0;
     let answeredCurrent = false;
 
     function renderQuizQuestion() {
+      if (!Array.isArray(quizBank) || quizBank.length === 0) {
+        document.getElementById('quiz-question').textContent = 'No questions in the Quiz sheet yet.';
+        document.getElementById('quiz-options').innerHTML = '';
+        return;
+      }
+      if (currentQ >= quizBank.length) currentQ = 0;
       const item = quizBank[currentQ];
       answeredCurrent = false;
 
