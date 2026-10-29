@@ -1,4 +1,4 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 08:32:23
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 08:38:43
 window.GOLDFISH_EXCEL_DATA = [
     {
         "sheetName":  "Maths",
@@ -433,7 +433,7 @@ window.GOLDFISH_QUIZ_DATA = [
         "question":  "Why is there no true exponential in the real physical world?",
         "options":  [
                         "The real world variables are chaotic and in true from do not follow any graph.",
-                        "In real world, everything is a gaussian curve and a growth means a decay",
+                        "In real world, everything is a gaussian curve and a growth is always followed by a decay",
                         "It becomes a logistic curve when nearing the population number/ end of finite resources.",
                         "None of the above"
                     ],
