@@ -1,4 +1,4 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 08:38:43
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 09:10:22
 window.GOLDFISH_EXCEL_DATA = [
     {
         "sheetName":  "Maths",
@@ -279,6 +279,18 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "definition":  "Inverse process of differentiation of identifying signal from differentiation",
                                               "application":  "for fourier transform",
                                               "resources":  "Signals and Systems by A. Nagoor Kani"
+                                          },
+                                          {
+                                              "concept":  "Laplace",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Fourier",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
                                           }
                                       ]
                          },
@@ -333,12 +345,6 @@ window.GOLDFISH_EXCEL_DATA = [
                              "title":  "Neuromodulation",
                              "rows":  [
                                           {
-                                              "concept":  "Deep Brain Stimulation (DBS)",
-                                              "definition":  "",
-                                              "application":  "",
-                                              "resources":  ""
-                                          },
-                                          {
                                               "concept":  "Transcranial Magnetic Stimulation",
                                               "definition":  "",
                                               "application":  "",
@@ -352,15 +358,15 @@ window.GOLDFISH_EXCEL_DATA = [
                                           },
                                           {
                                               "concept":  "Transcranial direct-current stimulation",
-                                              "definition":  "",
-                                              "application":  "",
-                                              "resources":  ""
+                                              "definition":  "form of neuromodulation that uses a steady current, low-intensity DC electricity between 1 - 2 mA delivered through electrodes.",
+                                              "application":  "tDCS is a non-invasive method, allowing for the reversible modulation of activity in particular brain regions.",
+                                              "resources":  "doi: 10.3389/fnins.2017.00641"
                                           },
                                           {
                                               "concept":  "Transcranial Focused Ultrasound",
                                               "definition":  "",
-                                              "application":  "",
-                                              "resources":  ""
+                                              "application":  "Emerging technique that can reach deeper brain surfaces",
+                                              "resources":  "doi: 10.1038/s41467-023-40998-0."
                                           }
                                       ]
                          },
@@ -372,6 +378,12 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "definition":  "",
                                               "application":  "Preprint worth reading for overview",
                                               "resources":  "arXiv:2404.15435v1"
+                                          },
+                                          {
+                                              "concept":  "Blink detection",
+                                              "definition":  "",
+                                              "application":  "One of the biggest artefact.",
+                                              "resources":  "https://link.springer.com/article/10.3758/s13428-017-1008-1?fromPaywallRec=false"
                                           }
                                       ]
                          }
