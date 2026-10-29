@@ -1,4 +1,4 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 07:55:20
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 08:32:23
 window.GOLDFISH_EXCEL_DATA = [
     {
         "sheetName":  "Maths",
@@ -318,21 +318,50 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "Epistemology of neuroscience",
                                               "definition":  "How do we study neuroscience? How do we define a \u0027neural correlate\u0027 of cognitive process?",
-                                              "application":  "VERY VERY VERY under recognized or under emphasized aspect of research.",
+                                              "application":  "VERY VERY under emphasized aspect of research in my opinion.",
                                               "resources":  "https://www.youtube.com/watch?v=Wzi7pMhCQnw\u0026t=46s"
                                           },
                                           {
                                               "concept":  "Fun rabbithole",
                                               "definition":  "Prof. Tobias Schlict has a really amazing collection of youtube videos that covers a variety of cognitive processes and neuroscientific research.",
-                                              "application":  "",
+                                              "application":  "Philosopher in cognitive sciences. Makes you think intuitively about neuroscience.",
                                               "resources":  "https://youtube.com/@tobiasschlicht935?si=Mlr4yF4baDiDxtqB"
                                           }
                                       ]
                          },
                          {
-                             "title":  "Transcranial Focused Ultrasound",
+                             "title":  "Neuromodulation",
                              "rows":  [
-
+                                          {
+                                              "concept":  "Deep Brain Stimulation (DBS)",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Transcranial Magnetic Stimulation",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Transcranial Alternating Current Stimulation (tACS)",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Transcranial direct-current stimulation",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Transcranial Focused Ultrasound",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          }
                                       ]
                          },
                          {
