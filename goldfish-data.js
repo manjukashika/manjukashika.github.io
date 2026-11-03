@@ -1,4 +1,4 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-10-29 09:10:22
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-11-03 17:28:08
 window.GOLDFISH_EXCEL_DATA = [
     {
         "sheetName":  "Maths",
@@ -142,7 +142,7 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "Limit",
                                               "definition":  "describes a value that a function approaches as its impact gets closer and closer to a specific number. This tells what value you are heading towards, even though you might never land on it.",
-                                              "application":  "Limits and continuity are the basis for calculus. While it can be difficult to understand or visualize, there are many animations online that do a great job vizualising its significance through its applications.",
+                                              "application":  "Limits and continuity are the basis for calculus. While it can be difficult to understand or visualize, there are many animations online that do a great job vizualising its significance through its applications. The second link simply shows how we calculate limits- rationalization, factorization, .",
                                               "resources":  "https://youtube.com/playlist?list=PLSQl0a2vh4HBReS9_V4QYOnqP2aguahxS\u0026si=roYYKXMmlnFQ7Kc1"
                                           },
                                           {
@@ -164,17 +164,71 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "resources":  "https://www.youtube.com/watch?v=PdSzruR5OeE"
                                           },
                                           {
-                                              "concept":  "Derivates",
-                                              "definition":  "slope of a tangent line. Rate of change at an instantenous moment. As d(t) is made to approach 0, the smaller difference, more \u0027instantenous\u0027- slope of the tangent line is closer to that point alone.",
+                                              "concept":  "Derivatives",
+                                              "definition":  "Rate of change at an instantenous moment. As d(t) is made to approach 0, the smaller difference, more \u0027instantenous\u0027- slope of the tangent line is closer to that point alone. If the change is a straight line- the slope of the tangent line is the derivative (deltax/deltay). but change is not always linear. so the following rules are to calculate the derivative as the rate of change through the slope at a specific moment.",
                                               "application":  "Differential calculus",
-                                              "resources":  "https://www.youtube.com/watch?v=N2PpRnFqnqY ; 3B1B playlist \u0027paradox of der.\u0027"
+                                              "resources":  "https://www.youtube.com/watch?v=N2PpRnFqnqY ; https://youtu.be/rAof9Ld5sOg?si=e47jm8Eu6KqNyU8-"
                                           },
                                           {
                                               "concept":  "Differential rules",
+                                              "definition":  "Power rule [f(x)=xn, then f \u0027(x)=nxn-1], Chain rule, Sum rules- the derivatives of the sum of 2 functions is the sum of their derivatives, Product rule (Left d-Right + Right d-left) and Quotient rule",
+                                              "application":  "Any monstrous equation can be broken down by peeling off three rules- Product, Sum and Composition [subtract becomes (-1) multiplied by the value and division becomes a fraction (1/x) multiplied]. d(sine) is cosine",
+                                              "resources":  "Watch Khan academy videos on each rule and then watch 3B1B \u0027essence of calculus\u0027 Ch. 3 \u00264"
+                                          },
+                                          {
+                                              "concept":  "Implicit Differentiation",
+                                              "definition":  "Implicit curve is a set of all points at x,y that satisfies some property/condition written in terms of the two variables x and y, instead of a strict function (eg. Unit circle- x2+y2=1, unit hyperbola - x2-y2=1, the pythogorean formula a2+b2=c2)",
+                                              "application":  "When the implicit function requires us to solve for both variables without solving for y alone, we differentiate both sides with respest to x, use chain rule and isolate the slope.",
+                                              "resources":  "https://youtu.be/qb40J4N1fa4?si=uyyD12kUxg7tvjH0 ; https://www.youtube.com/watch?v=sL6MC-lKOrw"
+                                          },
+                                          {
+                                              "concept":  "Sequences, convergen e and divergence",
+                                              "definition":  "Sequence is a progression of numbers. Arithmetic sequences are sequences where each term is a fixed number larger than the term before. Geometric sequence is where is successive number is the multiple a number.",
+                                              "application":  "We can see if the terms of the sequence approach a limiting value. For a sequence {an}, if lim an = L exists, then the sequence converges to L and if L does not exist (infinity/oscillations/undefined), then the sequence diverges.",
+                                              "resources":  "https://youtu.be/IsOS0CS2OD8?si=FiYjIt_vI9gav6SR"
+                                          },
+                                          {
+                                              "concept":  "Series",
+                                              "definition":  "An infinite series is a summation of the terms of a sequence",
+                                              "application":  "Partial sums [Sn= a1+a2+….an]",
+                                              "resources":  "https://www.youtube.com/watch?v=zg9N2gAf6a4"
+                                          },
+                                          {
+                                              "concept":  "Power series",
+                                              "definition":  "a power series is essentially an infinite polynomial, i.e., an infinite series that involves powers of a variable (usually x) centered for a constant (usually c)",
+                                              "application":  "If c=0, Maclaurin series.",
+                                              "resources":  "https://www.youtube.com/watch?v=OxVBT83x8oc ; https://youtu.be/a58otkmkHtk?si=fKIq2HYtO2quir3U"
+                                          },
+                                          {
+                                              "concept":  "Indefinite integrals / Antiderivates",
                                               "definition":  "",
-                                              "application":  "Power rule, sum rule, product rule, quotient rule, d(sine), chain rule",
-                                              "resources":  "3B1B \u0027essence of calculus\u0027 Ch. 3 \u00264"
+                                              "application":  "Accumulation and Riemann sums",
+                                              "resources":  "https://www.youtube.com/watch?v=__Uw1SXPW7s"
+                                          },
+                                          {
+                                              "concept":  "Fundamental theorem of integrals",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  "https://youtu.be/C7ducZoLKgw?si=z2ilhyjOyIGgQlGP ; https://youtu.be/Cz_GWNdf_68?si=-glEVWgUYhj9YGD7"
+                                          },
+                                          {
+                                              "concept":  "Improper integrals",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  "https://youtu.be/0JOIhPfXnxc?si=57B6rSQl9WdbhC1Z"
+                                          },
+                                          {
+                                              "concept":  "Laplace and Gaussian integral",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  "https://youtu.be/rBPUXDmPHtw?si=aVpNZcfrt4iJ6jvg"
                                           }
+                                      ]
+                         },
+                         {
+                             "title":  "Multivariate Calculus",
+                             "rows":  [
+
                                       ]
                          },
                          {
@@ -304,10 +358,22 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "resources":  "https://youtube.com/playlist?list=PLYcLrRDaR8_cBHy0sWaCaLmOlJb9gzmA2\u0026si=VJBD3J6VVHWAtGn2"
                                           },
                                           {
-                                              "concept":  "Understanding signals from the brain",
-                                              "definition":  "From Neuron to Brain Textbook (John G.Nicholls, A. Robert Martin, Bruce G. Wallace, Paul A.Fuchs)",
-                                              "application":  "Recommend investing in 1 good textbook.",
-                                              "resources":  ""
+                                              "concept":  "Anatomical planes",
+                                              "definition":  "The directional terms- Anterior, Posterior, Dorsal, Ventral, Superior, Inferior, Medial, Lateral, Contralateral and Ipsilateral. Imaging planes- Sagittal, Coronal and Axial",
+                                              "application":  "Extemely annoying for me. Same term is different for the brain and the spine.",
+                                              "resources":  "https://youtu.be/a7uU1c1iElM?si=wCAxgoDiDNvla-nS"
+                                          },
+                                          {
+                                              "concept":  "Neuron",
+                                              "definition":  "Anatomy of neuron, types of neuron",
+                                              "application":  "Grey and white matter, Spinal cord Neuronal classes and function",
+                                              "resources":  "https://youtu.be/5p9ucgRDie8?si=z4lNc9aSI6EBqWux ; https://youtu.be/yT9Ad01oUgc?si=365ZTjdJ5yj6ZrW5 ; https://www.youtube.com/watch?v=kR_jWUhmN2A"
+                                          },
+                                          {
+                                              "concept":  "Anatomy coloring book",
+                                              "definition":  "The best thing I ever got.",
+                                              "application":  "Specific author and book recommended by my professor. Coloring always helps to learn and remember better. This book has reading material on the left and coloring on the right for you to make strong associations from scratch.",
+                                              "resources":  "https://www.amazon.in/HUMAN-BRAIN-COLORING-BOOK-Arnold/dp/0064603067"
                                           }
                                       ]
                          }
@@ -342,6 +408,137 @@ window.GOLDFISH_EXCEL_DATA = [
                                       ]
                          },
                          {
+                             "title":  "Eyetracking",
+                             "rows":  [
+                                          {
+                                              "concept":  "Introduction to eye tracking: hands on tutorial for students and practitioners",
+                                              "definition":  "This entire section was based from reading this specific paper. It gave an amazing overview of eyetracking research.",
+                                              "application":  "Preprint worth reading for overview",
+                                              "resources":  "arXiv:2404.15435v1"
+                                          },
+                                          {
+                                              "concept":  "Anatomy of eye",
+                                              "definition":  "Cornea [outermost layer, protective barrier, refract incoming light and direct it onto the retina], Iris [colored part, regulat amount of light entering the eye, control size of pupil], Pupil [dilate or constrict in response to light inensity], Lens [fine-tune focus of light], Ciliary muscles [alter curvature of lens to focus across distances], Retina [light sensitive tissue composed of multiple layers of neurons and photoreceptors], Fovea inside the macula region [central area w dense concentration of cones, responsible for high visual acuity, color vision and detail perception].",
+                                              "application":  "The main function of the human eye is to capture incoming light and convert it into electrical signal.",
+                                              "resources":  "https://youtu.be/MgMNUne9j9c?si=FogfgzYFMpjg3K9L"
+                                          },
+                                          {
+                                              "concept":  "Anatomy- Retina",
+                                              "definition":  "There is a direct chain of neurons inside the retina that converts light into electrical signals and sends them to the brain. The retinotopic organization describes the specific coloumns of neurons corresponding to specific areas of the retine and so the visual field.",
+                                              "application":  "The neuronal pathway-- Photoreceptors [convert incoming light into neural signal, consist of rodes and cones], Rods- detect light, Cones- perceive color, followed by the bipolar cells and Ganglion cells.",
+                                              "resources":  "https://www.youtube.com/watch?v=ZmOL_6wJf4E"
+                                          },
+                                          {
+                                              "concept":  "Anatomy- Muscles",
+                                              "definition":  "There are six extraocular muscles controling the position of the eye. The levator palpebrae superioris muscle controls the elevation of the eyelid.",
+                                              "application":  "These muscles are innervated by several cranial nerves and coordinate to allow precise eye movements (smooth pursuits/saccades)",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Anatomy- Brain",
+                                              "definition":  "The brainstem and cerebellum regulate the movement of eyes. They also integrate information from the vestibular system. Primary visual cortex receives information (occipital lobe) --\u003e sent to Secondary visual cortex (inferior temporal lobe) --\u003e sent to Visual association cortex (dfferent parts of the cerebral cortex)",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eyetracking Data- Gaze Point",
+                                              "definition":  "The raw, fundamental data point in eyetracking representing the specific on-screen/ spatial coordinates (x,y) where a person\u0027s eyes are directed at a single instant in time.",
+                                              "application":  "How? The software identifies the boundaries of the pupil and and four corneal reflections (additional reference for pupil detection reliablity) relative to the pupil’s center to calculates its exact center (often using algorithms like Pupil Center Corneal Reflection or PCCR).The eye tracker maps only this singular center point to the screen coordinate.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eyetracking Data- Calibration",
+                                              "definition":  "The process of estimating the geometric characteristics of a participant’s eyes as the basis for a fully customized and accurate gaze point calculation. Calibration aims to establish an accurate mapping between measured eye movements and the corresponding points of gaze on a screen. The system estimates the transformation needed to accurately map eye movement to gaze poisitons.",
+                                              "application":  "Commonly employed approach involved standard calibration using linear or second order models to estimate the relationship between eye movements and gaze positions based on recorded data from fixations on calibration points. Another method- interpolation.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eyetracking System- Sampling rate",
+                                              "definition":  "In eyetracking system, it refers to how many times per second the eye tracker registers the position of the eyes, i.e. number of gaze points captured  .",
+                                              "application":  "Measured in Herts. Higher sampling frequency means more precise and accurate eye tracker ability to estimate true movement of the eyes. Comes at the cost of advanced cameras, more data storage and better processing capabilities.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eyetracking System- Accuracy",
+                                              "definition":  "This is the deviation between the actual gaze position and the gaze position recorded in the eye tracker",
+                                              "application":  "Accuracy can be influenced by calibration quality, camera resolution, stability of the eyetracking system. Comparable to Validity of data",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eyetracking System- Precision",
+                                              "definition":  "Refers to the measure of variation in the recorded data. Basically through Root Mean Square (or SD) precision measures the consistency and repeatability of consecutive gaze samples over time/ how tightly clustered recorded gaze points are when a person looks at the exact same location.",
+                                              "application":  "Comparable to reliability of data",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eye movements- Fixations",
+                                              "definition":  "Periods during which the eye remains still and foucs on a particular point of interest.",
+                                              "application":  "Information intake (usually 100ms to 350ms), longer fixation duration typically associated with increased cognitive load/difficulty processing information/ even level of expertise in information.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eye movements- Saccades",
+                                              "definition":  "High-speed and ballistic eye movements that direct isual attention from one fixation to another. Often analyzed by aggregate measures such as velocities and amplitudes.",
+                                              "application":  "Insights into the efficiency of the visual system in processing information and its prioritization of different regions of interest.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eye movements- Smooth Pursuits",
+                                              "definition":  "Occurs when tracking a moving object to maintain its position on the fovea. It involves a slow and continous movement of the eyes to track the moving target.",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Eye movements- Blinks",
+                                              "definition":  "Blinks refer to the rapid clising and opening of the eyelids (faction of a second). Renders the participant blink. Need to be excluded from analysis or incorporated with smoothed and cleaned measurements.",
+                                              "application":  "Blink rates are investigated for cognitive load, insights on visual intake and cognitive processes.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Detection- Fixation and Saccades",
+                                              "definition":  "These are the movements that form the visual scanpath and therefore are the main part of analysis. Different algorithms to detect- threshold-based algorithms, probablistic/deep-learning algorithms.",
+                                              "application":  "Comonly used based on velocity and dispersion threshold- Identification by Velocity Threshold (IVT)and Identification by Dispersion Threshold (IDT)",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Detection- Pupillary information",
+                                              "definition":  "Pupil size is associated with many factors such as task difficulty, mental load, cognitive effort and is sensitive to many external influences",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Baseline correction",
+                                              "definition":  "A technique used to account for the baseline size of pupil diameter to isolate differences related to individuals.",
+                                              "application":  "Two comman methods - subtractive and divisive baseline correction (median preffered over mean).",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Visual Scanpath",
+                                              "definition":  "Scanpaths are eye movement patterns formed from a spatiotemporal sequence of eye movement primarily consisting of fixations connected together by saccades evoked when a subject is performing certain visual tasks.",
+                                              "application":  "String alignment method is one approach where a scanpath is typically represented by encoding the spatial location information of fixations into a string where each character denotes the ROI the gaze fixates upon. Geometric methods define the problem as finding the optimal mapping between fixation locations in both scanpaths according to their spatial distance with neighbouring fixations. Probablistic methods tackle high normal variablity between scanpaths by hypothesizing the stochastic nature of eye movement parameters as random varaibles sampled from underlying stochastic processes. Deep learning algorithms have emerged as powerful tools in scanpth analysis.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Visualizing eyetracking data",
+                                              "definition":  "Important for interpretation of complex patterns in eye movement behaviour",
+                                              "application":  "Saliency maps, scanpaths, gazeplots",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Blink detection",
+                                              "definition":  "There are many variables of blinks that give a lot of insight- blink frequency, duration. The paper 2023 Munich paper also discusses other characteristics of blinks such as inter-blink interval, blink symmetry, blink patterns…",
+                                              "application":  "One of the biggest artefact. This is a specific problem that we encountered for one of our projects. How do we accurately identify and annotate blinks before interpolation?",
+                                              "resources":  "https://link.springer.com/article/10.3758/s13428-017-1008-1?fromPaywallRec=false ; https://dl.acm.org/doi/fullHtml/10.1145/3588015.3589202"
+                                          },
+                                          {
+                                              "concept":  "Blink detection algorithm 2024 (Dr. Marcus Nyström – Lund University Humanities Lab)",
+                                              "definition":  "New algorithm based of Eye-Openness instead of Pupil Diameter.",
+                                              "application":  "Eyelid closure instead of pupil diameter.",
+                                              "resources":  "https://www.youtube.com/watch?v=HbrzvKMlAME"
+                                          }
+                                      ]
+                         },
+                         {
                              "title":  "Neuromodulation",
                              "rows":  [
                                           {
@@ -367,23 +564,6 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "definition":  "",
                                               "application":  "Emerging technique that can reach deeper brain surfaces",
                                               "resources":  "doi: 10.1038/s41467-023-40998-0."
-                                          }
-                                      ]
-                         },
-                         {
-                             "title":  "Eyetracking",
-                             "rows":  [
-                                          {
-                                              "concept":  "Introduction to eye tracking: hands on tutorial for students and practitioners",
-                                              "definition":  "",
-                                              "application":  "Preprint worth reading for overview",
-                                              "resources":  "arXiv:2404.15435v1"
-                                          },
-                                          {
-                                              "concept":  "Blink detection",
-                                              "definition":  "",
-                                              "application":  "One of the biggest artefact.",
-                                              "resources":  "https://link.springer.com/article/10.3758/s13428-017-1008-1?fromPaywallRec=false"
                                           }
                                       ]
                          }
