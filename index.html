@@ -1526,7 +1526,7 @@
             </div>
 
             <div class="subsection-list">
-              <details class="subsection-item" open>
+              <details class="subsection-item">
                 <summary class="subsection-summary">
                   <span class="summary-left">
                     <span class="summary-chevron">&#9654;</span>
@@ -1901,7 +1901,7 @@
             </div>
 
             <div class="subsection-list">
-              <details class="subsection-item" open>
+              <details class="subsection-item">
                 <summary class="subsection-summary">
                   <span class="summary-left">
                     <span class="summary-chevron">&#9654;</span>
@@ -2047,7 +2047,7 @@
             </div>
 
             <div class="subsection-list">
-              <details class="subsection-item" open>
+              <details class="subsection-item">
                 <summary class="subsection-summary">
                   <span class="summary-left">
                     <span class="summary-chevron">&#9654;</span>
@@ -2461,7 +2461,7 @@
           const rows = Array.isArray(chap.rows) ? chap.rows : [];
           const rowCount = rows.length;
           const topicCountText = rowCount === 1 ? '1 Topic' : `${rowCount} Topics`;
-          const openAttr = cIdx === 0 ? ' open' : '';
+          const openAttr = '';
 
           const rowsHtml = rowCount === 0
             ? `<tr><td colspan="4" style="color: var(--ink-muted); font-style: italic;">No topics added under this chapter yet.</td></tr>`

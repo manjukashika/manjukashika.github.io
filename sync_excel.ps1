@@ -379,7 +379,7 @@ window.GOLDFISH_QUIZ_DATA = $quizJson;
 
         $cIdx = 0
         foreach ($chap in $subj.chapters) {
-            $openAttr = if ($cIdx -eq 0) { " open" } else { "" }
+            $openAttr = ""
             $rowCount = $chap.rows.Count
             $topicCountText = if ($rowCount -eq 1) { "1 Topic" } else { "$rowCount Topics" }
             $safeChapTitle = HtmlEncode $chap.title
