@@ -11,13 +11,30 @@ if (-not $workspaceDir) {
     $workspaceDir = "c:\Users\manju\Desktop\Academia\website_portfolio"
 }
 
-$excelPath = Join-Path $workspaceDir "GoldfishMemory.xlsx"
-$jsOutPath = Join-Path $workspaceDir "goldfish-data.js"
-$htmlPath  = Join-Path $workspaceDir "index.html"
+$excelPath   = Join-Path $workspaceDir "GoldfishMemory.xlsx"
+$jsOutPath   = Join-Path $workspaceDir "goldfish-data.js"
+$htmlPath    = Join-Path $workspaceDir "index.html"
+$excelImgDir = Join-Path $workspaceDir "assets\excel-img"
+
+if (-not (Test-Path $excelImgDir)) {
+    New-Item -ItemType Directory -Path $excelImgDir -Force | Out-Null
+}
 
 function HtmlEncode([string]$str) {
     if ([string]::IsNullOrEmpty($str)) { return "" }
     return [System.Net.WebUtility]::HtmlEncode($str.Trim())
+}
+
+function FormatCellContent([string]$str) {
+    if ([string]::IsNullOrWhiteSpace($str)) { return "&mdash;" }
+    $trimmed = $str.Trim()
+    # Replace [IMG:path] markers with <img class="formula-img" ... />
+    $imgPattern = '^\[IMG:([^\]]+)\]$'
+    if ($trimmed -match $imgPattern) {
+        $imgPath = $Matches[1]
+        return "<a href=`"$imgPath`" target=`"_blank`" rel=`"noopener`" title=`"Click to view full size`"><img src=`"$imgPath`" alt=`"Formula / Diagram`" class=`"formula-img`" /></a>"
+    }
+    return HtmlEncode $trimmed
 }
 
 function FormatResourceLinks([string]$raw) {
@@ -25,6 +42,11 @@ function FormatResourceLinks([string]$raw) {
         return '<span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span>'
     }
     $trimmed = $raw.Trim()
+    $imgPattern = '^\[IMG:([^\]]+)\]$'
+    if ($trimmed -match $imgPattern) {
+        $imgPath = $Matches[1]
+        return "<a href=`"$imgPath`" target=`"_blank`" rel=`"noopener`"><img src=`"$imgPath`" alt=`"Resource Image`" class=`"formula-img`" /></a>"
+    }
     # Extract URLs if present
     $urlPattern = 'https?://[^\s,;]+'
     $matches = [regex]::Matches($trimmed, $urlPattern)
@@ -86,6 +108,75 @@ function Parse-GoldfishExcel {
     $zip = New-Object System.IO.Compression.ZipArchive($fs, [System.IO.Compression.ZipArchiveMode]::Read)
 
     try {
+        # 0. Extract all media images (xl/media/*) into assets/excel-img/ and map cell vm -> image path
+        foreach ($entry in $zip.Entries) {
+            if ($entry.FullName -like 'xl/media/*') {
+                $fileName = [System.IO.Path]::GetFileName($entry.FullName)
+                $destFile = Join-Path $excelImgDir $fileName
+                $inStream = $entry.Open()
+                $outStream = New-Object System.IO.FileStream($destFile, [System.IO.FileMode]::Create, [System.IO.FileAccess]::Write)
+                $inStream.CopyTo($outStream)
+                $outStream.Close()
+                $inStream.Close()
+            }
+        }
+
+        # Map vm (1-based valueMetadata index) -> assets/excel-img/imageX.png
+        $vmToImageMap = @{}
+        $metaEntry   = $zip.GetEntry('xl/metadata.xml')
+        $rvEntry     = $zip.GetEntry('xl/richData/rdrichvalue.xml')
+        $rvRelEntry  = $zip.GetEntry('xl/richData/richValueRel.xml')
+        $rvRelsEntry = $zip.GetEntry('xl/richData/_rels/richValueRel.xml.rels')
+
+        if ($metaEntry -and $rvEntry -and $rvRelEntry -and $rvRelsEntry) {
+            $sr = New-Object System.IO.StreamReader($rvRelsEntry.Open(), [System.Text.Encoding]::UTF8)
+            $rvRelsXml = [xml]$sr.ReadToEnd()
+            $sr.Close()
+            $rIdToTarget = @{}
+            foreach ($rel in $rvRelsXml.Relationships.Relationship) {
+                $rIdToTarget[$rel.Id] = [System.IO.Path]::GetFileName($rel.Target)
+            }
+
+            $sr = New-Object System.IO.StreamReader($rvRelEntry.Open(), [System.Text.Encoding]::UTF8)
+            $rvRelXml = [xml]$sr.ReadToEnd()
+            $sr.Close()
+            $relIndexToFile = @()
+            foreach ($relNode in $rvRelXml.richValueRels.rel) {
+                $rId = $relNode.GetAttribute('id', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships')
+                if ($rIdToTarget.ContainsKey($rId)) {
+                    $relIndexToFile += $rIdToTarget[$rId]
+                } else {
+                    $relIndexToFile += ""
+                }
+            }
+
+            $sr = New-Object System.IO.StreamReader($rvEntry.Open(), [System.Text.Encoding]::UTF8)
+            $rvXml = [xml]$sr.ReadToEnd()
+            $sr.Close()
+            $rvIndexToFile = @()
+            foreach ($rvNode in $rvXml.rvData.rv) {
+                $vNodes = @($rvNode.v)
+                $localImgIdx = [int]$vNodes[0]
+                if ($localImgIdx -ge 0 -and $localImgIdx -lt $relIndexToFile.Count) {
+                    $rvIndexToFile += $relIndexToFile[$localImgIdx]
+                } else {
+                    $rvIndexToFile += ""
+                }
+            }
+
+            $sr = New-Object System.IO.StreamReader($metaEntry.Open(), [System.Text.Encoding]::UTF8)
+            $metaXml = [xml]$sr.ReadToEnd()
+            $sr.Close()
+            $vmIdx = 1
+            foreach ($bk in $metaXml.metadata.valueMetadata.bk) {
+                $vIdx = [int]$bk.rc.v
+                if ($vIdx -ge 0 -and $vIdx -lt $rvIndexToFile.Count -and $rvIndexToFile[$vIdx]) {
+                    $vmToImageMap[$vmIdx] = "assets/excel-img/" + $rvIndexToFile[$vIdx]
+                }
+                $vmIdx++
+            }
+        }
+
         # 1. Shared Strings (explicitly read as UTF8 so math symbols like ∑ never get garbled)
         $sharedStrings = @()
         $ssEntry = $zip.GetEntry('xl/sharedStrings.xml')
@@ -174,7 +265,9 @@ function Parse-GoldfishExcel {
                         $cellRef = [string]$c.r
                         $col = $cellRef -replace '\d+', ''
                         $val = ""
-                        if ($c.t -eq 's') {
+                        if ($c.vm -and $vmToImageMap.ContainsKey([int]$c.vm)) {
+                            $val = "[IMG:$($vmToImageMap[[int]$c.vm])]"
+                        } elseif ($c.t -eq 's') {
                             $idx = [int]$c.v
                             if ($idx -ge 0 -and $idx -lt $sharedStrings.Count) {
                                 $val = $sharedStrings[$idx]
@@ -248,7 +341,9 @@ function Parse-GoldfishExcel {
                     $cellStyles[$col] = $styleIdx
 
                     $val = ""
-                    if ($c.t -eq 's') {
+                    if ($c.vm -and $vmToImageMap.ContainsKey([int]$c.vm)) {
+                        $val = "[IMG:$($vmToImageMap[[int]$c.vm])]"
+                    } elseif ($c.t -eq 's') {
                         $idx = [int]$c.v
                         if ($idx -ge 0 -and $idx -lt $sharedStrings.Count) {
                             $val = $sharedStrings[$idx]
@@ -335,6 +430,7 @@ function Parse-GoldfishExcel {
         return [PSCustomObject]@{
             subjects = $subjects
             quiz     = $quizList
+            images   = $vmToImageMap.Count
         }
     } finally {
         $zip.Dispose()
@@ -348,6 +444,7 @@ function Update-WebsiteFiles {
 
     $subjects = $parsed.subjects
     $quizList = $parsed.quiz
+    $imgCount = $parsed.images
     $timestamp = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
 
     # 1. Write goldfish-data.js (works on file:// and https://)
@@ -364,7 +461,7 @@ window.GOLDFISH_QUIZ_DATA = $quizJson;
     $sb = New-Object System.Text.StringBuilder
     foreach ($subj in $subjects) {
         $chapCount = $subj.chapters.Count
-        $subLabel = if ($chapCount -eq 1) { "1 Chapter • Expandable Table" } else { "$chapCount Chapters • Expandable Tables" }
+        $subLabel = if ($chapCount -eq 1) { "1 Chapter" } else { "$chapCount Chapters" }
         $safeSheetName = HtmlEncode $subj.sheetName
 
         [void]$sb.AppendLine("          <div class=`"subject-group`" data-subject=`"$($subj.key)`">")
@@ -415,9 +512,9 @@ window.GOLDFISH_QUIZ_DATA = $quizJson;
                 [void]$sb.AppendLine("                      </tr>")
             } else {
                 foreach ($r in $chap.rows) {
-                    $cText = if ($r.concept) { HtmlEncode $r.concept } else { "&mdash;" }
-                    $dText = if ($r.definition) { HtmlEncode $r.definition } else { "&mdash;" }
-                    $aText = if ($r.application) { HtmlEncode $r.application } else { "&mdash;" }
+                    $cText = FormatCellContent $r.concept
+                    $dText = FormatCellContent $r.definition
+                    $aText = FormatCellContent $r.application
                     $rHtml = FormatResourceLinks $r.resources
 
                     [void]$sb.AppendLine("                      <tr>")
@@ -456,7 +553,7 @@ window.GOLDFISH_QUIZ_DATA = $quizJson;
         [System.IO.File]::WriteAllText($htmlPath, $htmlRaw, [System.Text.Encoding]::UTF8)
     }
 
-    Write-Host "[$timestamp] Synced GoldfishMemory.xlsx -> goldfish-data.js & index.html ($($subjects.Count) subject sheets, $($quizList.Count) quiz questions)"
+    Write-Host "[$timestamp] Synced GoldfishMemory.xlsx -> goldfish-data.js & index.html ($($subjects.Count) subject sheets, $($quizList.Count) quiz questions, $imgCount formula images)"
 }
 
 Update-WebsiteFiles

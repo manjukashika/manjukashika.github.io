@@ -1,4 +1,4 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-11-04 12:40:52
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-11-06 15:44:34
 window.GOLDFISH_EXCEL_DATA = [
     {
         "sheetName":  "Maths",
@@ -128,6 +128,12 @@ window.GOLDFISH_EXCEL_DATA = [
                              "title":  "Calculus",
                              "rows":  [
                                           {
+                                              "concept":  "Lore of calculus",
+                                              "definition":  "Calculus involves so many mathematicians and history behind it. The story of calculus made me more involved. Just incentivized the process for myself cause my god I hated how long I spent trying to understand/visualize calculus.",
+                                              "application":  "SUPER FUN VIDEO to make calculus a little fun.",
+                                              "resources":  "https://youtu.be/5M2RWtD4EzI?si=8EFuBY1WlhwZ4j4E"
+                                          },
+                                          {
                                               "concept":  "Introduction to calculus",
                                               "definition":  "The math of things that change- How fast x is changing right now (derivatives) and how much has x changed in total (integrals)",
                                               "application":  "The basis for waves and signal processing for neuroscience",
@@ -141,8 +147,8 @@ window.GOLDFISH_EXCEL_DATA = [
                                           },
                                           {
                                               "concept":  "Limit",
-                                              "definition":  "describes a value that a function approaches as its impact gets closer and closer to a specific number. This tells what value you are heading towards, even though you might never land on it.",
-                                              "application":  "Limits and continuity are the basis for calculus. While it can be difficult to understand or visualize, there are many animations online that do a great job vizualising its significance through its applications. The second link simply shows how we calculate limits- rationalization, factorization, .",
+                                              "definition":  "describes a value that a function approaches as its impact gets closer and closer to a specific number. This tells what value you are heading towards, even though you might never land on it. Limits and continuity are the basis for calculus. While it can be difficult to understand or visualize, there are many animations online that do a great job vizualising its significance through its applications.",
+                                              "application":  "[IMG:assets/excel-img/image1.png]",
                                               "resources":  "https://youtube.com/playlist?list=PLSQl0a2vh4HBReS9_V4QYOnqP2aguahxS\u0026si=roYYKXMmlnFQ7Kc1"
                                           },
                                           {
@@ -171,8 +177,8 @@ window.GOLDFISH_EXCEL_DATA = [
                                           },
                                           {
                                               "concept":  "Differential rules",
-                                              "definition":  "Power rule [f(x)=xn, then f \u0027(x)=nxn-1], Chain rule, Sum rules- the derivatives of the sum of 2 functions is the sum of their derivatives, Product rule (Left d-Right + Right d-left) and Quotient rule",
-                                              "application":  "Any monstrous equation can be broken down by peeling off three rules- Product, Sum and Composition [subtract becomes (-1) multiplied by the value and division becomes a fraction (1/x) multiplied]. d(sine) is cosine",
+                                              "definition":  "Power rule [f(x)=xn, then f \u0027(x)=nxn-1], Chain rule (peel the composite/ nested functions and multiply them), Sum rules- the derivatives of the sum of 2 functions is the sum of their derivatives, Product rule (Left d-Right + Right d-left) and Quotient rule. Any monstrous equation can be broken down by peeling off three rules- Product, Sum and Composition [subtract becomes (-1) multiplied by the value and division becomes a fraction (1/x) multiplied]. d(sine) is cosine",
+                                              "application":  "[IMG:assets/excel-img/image2.png]",
                                               "resources":  "Watch Khan academy videos on each rule and then watch 3B1B \u0027essence of calculus\u0027 Ch. 3 \u00264"
                                           },
                                           {
@@ -195,32 +201,26 @@ window.GOLDFISH_EXCEL_DATA = [
                                           },
                                           {
                                               "concept":  "Power series",
-                                              "definition":  "a power series is essentially an infinite polynomial, i.e., an infinite series that involves powers of a variable (usually x) centered for a constant (usually c)",
-                                              "application":  "If c=0, Maclaurin series.",
+                                              "definition":  "a power series is essentially an infinite polynomial, i.e., an infinite series that involves powers of a variable (usually x) centered for a constant/ coefficients (usually c). Domain of this function is the set of all x values in which this series converges.  If c=0, Maclaurin series.",
+                                              "application":  "[IMG:assets/excel-img/image3.png]",
                                               "resources":  "https://www.youtube.com/watch?v=OxVBT83x8oc ; https://youtu.be/a58otkmkHtk?si=fKIq2HYtO2quir3U"
                                           },
                                           {
                                               "concept":  "Indefinite integrals / Antiderivates",
-                                              "definition":  "",
-                                              "application":  "Accumulation and Riemann sums",
+                                              "definition":  "Taking all the derivatives and adding it all up.  While derivates is the rate of change at one instance, integrals adds up infinitely many small parts to find the whole (usually visualized as the area under a curve). Notation- The long  S integral symbol represents the limit of sums, the top number is upper limit and bottom number is lower limit and the function needs to be followed by dx.",
+                                              "application":  "[IMG:assets/excel-img/image4.png]",
                                               "resources":  "https://www.youtube.com/watch?v=__Uw1SXPW7s"
                                           },
                                           {
-                                              "concept":  "Fundamental theorem of integrals",
-                                              "definition":  "",
-                                              "application":  "",
-                                              "resources":  "https://youtu.be/C7ducZoLKgw?si=z2ilhyjOyIGgQlGP ; https://youtu.be/Cz_GWNdf_68?si=-glEVWgUYhj9YGD7"
-                                          },
-                                          {
                                               "concept":  "Improper integrals",
-                                              "definition":  "",
-                                              "application":  "",
+                                              "definition":  "Integral with one or more \u0027illegal\u0027 features under standard calculus rules - either infinite limits or discontinous integrands (vertical asymptotes)",
+                                              "application":  "Not all improper integrals can even be evaluated (if integral is divergent).",
                                               "resources":  "https://youtu.be/0JOIhPfXnxc?si=57B6rSQl9WdbhC1Z"
                                           },
                                           {
-                                              "concept":  "Laplace and Gaussian integral",
-                                              "definition":  "",
-                                              "application":  "",
+                                              "concept":  "Gaussian integral / Probability integral",
+                                              "definition":  "Gaussian integral is one of the most important concepts for statistics- area under a bell-shaped curve. It is an improper integral. Integral of e-x^2 from -infinity to +infinity. Nobody has found an elementary integral formula. So, usual integration techniques do not work here. Usually solved using \u0027polar coordinates\u0027- it is cool that the answer is uduall square root of pi even though there is no circle/angle/geometry! Laplace had a cooler way to calculate it even before.",
+                                              "application":  "[IMG:assets/excel-img/image5.png]",
                                               "resources":  "https://youtu.be/rBPUXDmPHtw?si=aVpNZcfrt4iJ6jvg"
                                           }
                                       ]
@@ -228,7 +228,66 @@ window.GOLDFISH_EXCEL_DATA = [
                          {
                              "title":  "Multivariate Calculus",
                              "rows":  [
-
+                                          {
+                                              "concept":  "Introduction /Overview of Multivariate Calculus",
+                                              "definition":  "From 2D plane to 3D plane",
+                                              "application":  "This video was super super helpful. Gave a motivating problem to visualize and think intuitively at each step of the calculations.",
+                                              "resources":  "https://www.youtube.com/watch?v=ZTxafDib4VU"
+                                          },
+                                          {
+                                              "concept":  "Parial derivative",
+                                              "definition":  "The process of freezing all other variables to turn a complex function into a simple one and then taking a regular derivative. When taking the derivative with respect to one variable, you treat all other variables as if they were constants (the rate of change is zero because we are freezing it).",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Gradient",
+                                              "definition":  "Finds the direction of the steepest ascent on a surface. The gradient packages the two fundamental slopes (partial derivatives) into a single vector.",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Jacobian",
+                                              "definition":  "Translates changes in input to outputs in multiple dimensions. Derivative is the Matrix of vector functions- a small change in inputs into resulting change in outputs.",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Multivariate chain rule",
+                                              "definition":  "The derivative of the whole chain is the product of the derivative matrices (the jacobians) of each step",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Hessian",
+                                              "definition":  "Determines the shape of a surface; peak/valley/ saddle",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Unconstrained Optimization",
+                                              "definition":  "Finds and classifies the maximums and minimums of a functions",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Lagrange Multipliers",
+                                              "definition":  "Finds max/min of a function subject to a constraint",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Double and Triple integrals",
+                                              "definition":  "Calculates the volume under a surfcae or mass of an object",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Change of Variables",
+                                              "definition":  "Simplifies integrals by switching coordinate systems",
+                                              "application":  "",
+                                              "resources":  ""
+                                          }
                                       ]
                          },
                          {
