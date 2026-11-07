@@ -37,6 +37,25 @@ function FormatCellContent([string]$str) {
     return HtmlEncode $trimmed
 }
 
+function Test-IsGreenExcelColor($colorNode) {
+    if ($null -eq $colorNode) { return $false }
+    if ($colorNode.rgb) {
+        $hex = ([string]$colorNode.rgb).Trim()
+        if ($hex.Length -eq 8) { $hex = $hex.Substring(2) }
+        if ($hex.Length -eq 6) {
+            try {
+                $r = [Convert]::ToInt32($hex.Substring(0, 2), 16)
+                $g = [Convert]::ToInt32($hex.Substring(2, 2), 16)
+                $b = [Convert]::ToInt32($hex.Substring(4, 2), 16)
+                if ($g -gt 80 -and $g -gt ($r + 30) -and $g -gt ($b + 20)) {
+                    return $true
+                }
+            } catch {}
+        }
+    }
+    return $false
+}
+
 function FormatResourceLinks([string]$raw) {
     if ([string]::IsNullOrWhiteSpace($raw)) {
         return '<span style="color: var(--ink-muted); font-size: 0.82rem;">&mdash;</span>'
@@ -47,36 +66,41 @@ function FormatResourceLinks([string]$raw) {
         $imgPath = $Matches[1]
         return "<a href=`"$imgPath`" target=`"_blank`" rel=`"noopener`"><img src=`"$imgPath`" alt=`"Resource Image`" class=`"formula-img`" /></a>"
     }
-    # Extract URLs if present
-    $urlPattern = 'https?://[^\s,;]+'
+    # Extract URLs if present (supporting optional [FAV] prefix for green-colored favorite links)
+    $urlPattern = '(\[FAV\])?(https?://[^\s,;]+)'
     $matches = [regex]::Matches($trimmed, $urlPattern)
     if ($matches.Count -gt 0) {
         $linksHtml = @()
         $idx = 1
         foreach ($m in $matches) {
-            $url = $m.Value.TrimEnd('.', ',', ';', ')')
-            $label = "Link"
-            if ($url -match 'youtube\.com|youtu\.be') { $label = "YouTube" }
-            elseif ($url -match 'bit\.ly') { $label = "Playlist / Link" }
-            elseif ($url -match 'github\.com') { $label = "GitHub" }
-            elseif ($url -match 'mit\.edu') { $label = "MIT OCW" }
+            $isFav = ($m.Groups[1].Value -eq '[FAV]')
+            $url = $m.Groups[2].Value.TrimEnd('.', ',', ';', ')')
+            $label = "link"
+            $linkClass = "resource-link"
+            if ($isFav) {
+                $label = "my fav"
+                $linkClass = "resource-link resource-link-fav"
+            } elseif ($url -match 'youtube\.com|youtu\.be') { $label = "youtube" }
+            elseif ($url -match 'bit\.ly') { $label = "playlist / link" }
+            elseif ($url -match 'github\.com') { $label = "github" }
+            elseif ($url -match 'mit\.edu') { $label = "mit ocw" }
             else {
                 try {
                     $uri = [System.Uri]$url
-                    $hostName = $uri.Host -replace '^www\.', ''
+                    $hostName = ($uri.Host -replace '^www\.', '').ToLower()
                     $label = $hostName
                 } catch {
-                    $label = "Resource $idx"
+                    $label = "resource $idx"
                 }
             }
             $safeUrl = [System.Net.WebUtility]::HtmlEncode($url)
             $safeLabel = [System.Net.WebUtility]::HtmlEncode($label)
-            $linksHtml += "<a href=`"$safeUrl`" target=`"_blank`" rel=`"noopener`" class=`"resource-link`">$safeLabel &nearr;</a>"
+            $linksHtml += "<a href=`"$safeUrl`" target=`"_blank`" rel=`"noopener`" class=`"$linkClass`">$safeLabel &nearr;</a>"
             $idx++
         }
         return ($linksHtml -join " ")
     } else {
-        return HtmlEncode $trimmed
+        return HtmlEncode ($trimmed -replace '\[FAV\]', '')
     }
 }
 
@@ -190,7 +214,11 @@ function Parse-GoldfishExcel {
                     else { $sharedStrings += $si.t.InnerText }
                 } elseif ($null -ne $si.r) {
                     $parts = foreach ($r in $si.r) {
-                        if ($r.t -is [string]) { $r.t } else { $r.t.InnerText }
+                        $runText = if ($r.t -is [string]) { $r.t } else { $r.t.InnerText }
+                        if ($r.rPr -and $r.rPr.color -and (Test-IsGreenExcelColor $r.rPr.color)) {
+                            $runText = [regex]::Replace($runText, '(https?://[^\s,;]+)', '[FAV]$1')
+                        }
+                        $runText
                     }
                     $sharedStrings += ($parts -join '')
                 } else {
@@ -199,13 +227,26 @@ function Parse-GoldfishExcel {
             }
         }
 
-        # 2. Styles (to detect medium-shade chapter rows even if unmerged)
+        # 2. Styles (to detect medium-shade chapter rows and green-font favorite links)
         $xfTints = @{}
+        $xfGreenFonts = @{}
         $stylesEntry = $zip.GetEntry('xl/styles.xml')
         if ($stylesEntry) {
             $sr = New-Object System.IO.StreamReader($stylesEntry.Open(), [System.Text.Encoding]::UTF8)
             $stylesXml = [xml]$sr.ReadToEnd()
             $sr.Close()
+
+            $greenFontIds = @{}
+            $fIdx = 0
+            if ($stylesXml.styleSheet.fonts -and $stylesXml.styleSheet.fonts.font) {
+                foreach ($font in $stylesXml.styleSheet.fonts.font) {
+                    if ($font.color -and (Test-IsGreenExcelColor $font.color)) {
+                        $greenFontIds[$fIdx] = $true
+                    }
+                    $fIdx++
+                }
+            }
+
             $sIdx = 0
             foreach ($xf in $stylesXml.styleSheet.cellXfs.xf) {
                 $fillId = [int]$xf.fillId
@@ -214,6 +255,11 @@ function Parse-GoldfishExcel {
                 $tintVal = ""
                 if ($fg -and $fg.tint) { $tintVal = [string]$fg.tint }
                 $xfTints[$sIdx] = $tintVal
+
+                $fontId = if ($xf.fontId) { [int]$xf.fontId } else { 0 }
+                if ($greenFontIds.ContainsKey($fontId)) {
+                    $xfGreenFonts[$sIdx] = $true
+                }
                 $sIdx++
             }
         }
@@ -354,7 +400,11 @@ function Parse-GoldfishExcel {
                         $val = [string]$c.v
                     }
                     if (-not [string]::IsNullOrWhiteSpace($val)) {
-                        $cells[$col] = $val.Trim()
+                        $trimmedVal = $val.Trim()
+                        if ($xfGreenFonts.ContainsKey($styleIdx) -and $trimmedVal -match 'https?://') {
+                            $trimmedVal = [regex]::Replace($trimmedVal, '(?<!\[FAV\])(https?://[^\s,;]+)', '[FAV]$1')
+                        }
+                        $cells[$col] = $trimmedVal
                     }
                 }
 

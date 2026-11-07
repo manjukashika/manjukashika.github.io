@@ -1,4 +1,4 @@
-﻿// Auto-generated from GoldfishMemory.xlsx at 2026-11-06 15:44:34
+﻿// Auto-generated from GoldfishMemory.xlsx at 2026-11-07 15:23:28
 window.GOLDFISH_EXCEL_DATA = [
     {
         "sheetName":  "Maths",
@@ -23,8 +23,8 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "All of math playlist",
                                               "definition":  "Professor Dave Explains YT Channel",
-                                              "application":  "all of high school with formulas and math in quick 10 min videos. Probably the best start to get a quick background of everything we will come across much more in detailed later.",
-                                              "resources":  "https://bit.ly/ProfDaveMath"
+                                              "application":  "all of math in quick 10 min videos. Probably the best playlist to get a quick yet detailed of all the concepts. I have given videos from this playlist throughout my notebook.",
+                                              "resources":  "[FAV]https://bit.ly/ProfDaveMath"
                                           },
                                           {
                                               "concept":  "Lockdown mathematics playlist",
@@ -90,7 +90,7 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "concept":  "Logarithm",
                                               "definition":  "LogbaseAnswer= Power [BAP].",
                                               "application":  "Natural log (Answer=infinity, base=e, \u0027ln\u0027) and common log (base=10). Change of base property to express one log with a different base (logbx=logax/logab)",
-                                              "resources":  "https://youtu.be/zzu2POfYv0Y?si=JPr_Ei-xuxwPLbwD ; https://youtu.be/LCmnKWXCIfk?si=egk61nJkSG5K6dg_ ; https://youtu.be/sQ2ix7QcGwQ?si=e4-YH-qC1a44EEhl"
+                                              "resources":  "https://youtu.be/zzu2POfYv0Y?si=JPr_Ei-xuxwPLbwD ; https://youtu.be/LCmnKWXCIfk?si=egk61nJkSG5K6dg_ ; [FAV]https://youtu.be/sQ2ix7QcGwQ?si=e4-YH-qC1a44EEhl"
                                           },
                                           {
                                               "concept":  "Euler\u0027s number",
@@ -131,7 +131,7 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "concept":  "Lore of calculus",
                                               "definition":  "Calculus involves so many mathematicians and history behind it. The story of calculus made me more involved. Just incentivized the process for myself cause my god I hated how long I spent trying to understand/visualize calculus.",
                                               "application":  "SUPER FUN VIDEO to make calculus a little fun.",
-                                              "resources":  "https://youtu.be/5M2RWtD4EzI?si=8EFuBY1WlhwZ4j4E"
+                                              "resources":  "[FAV]https://youtu.be/5M2RWtD4EzI?si=8EFuBY1WlhwZ4j4E"
                                           },
                                           {
                                               "concept":  "Introduction to calculus",
@@ -188,6 +188,18 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "resources":  "https://youtu.be/qb40J4N1fa4?si=uyyD12kUxg7tvjH0 ; https://www.youtube.com/watch?v=sL6MC-lKOrw"
                                           },
                                           {
+                                              "concept":  "Higher derivatives",
+                                              "definition":  "The derivative of the first derivative of the function. The first derivative tells you the slop of a function and the second derivative tells you how fast that slope is changing. If first derivative is velocity, second derivative is acceleration. Sign of second derivative shows if the graph is concave up/down. The derivative of the second derivative is the third derivative. The result of differentiating a function three times with respect to a variable. Third derivative is jolt/ how quickly acceleration changes over time.",
+                                              "application":  "[IMG:assets/excel-img/image3.png]",
+                                              "resources":  "https://youtu.be/zUDxgehxQqs?si=M_C8mmc7MSsURMFZ"
+                                          },
+                                          {
+                                              "concept":  "Point of inflection",
+                                              "definition":  "The point on the curve where the curvature changes, often indicated by a change in the slopes of tangents to the curve. For an inflection point, the second derivative mist change sign at that point. Find first and second derivative, either set f\u0027\u0027(x) as 0 ot find where f\u0027\u0027(x) is undefined. Test intervals around each candidate value to see if f\u0027\u0027(x) changes sign and then find y-coordinate.",
+                                              "application":  "[IMG:assets/excel-img/image4.png]",
+                                              "resources":  ""
+                                          },
+                                          {
                                               "concept":  "Sequences, convergen e and divergence",
                                               "definition":  "Sequence is a progression of numbers. Arithmetic sequences are sequences where each term is a fixed number larger than the term before. Geometric sequence is where is successive number is the multiple a number.",
                                               "application":  "We can see if the terms of the sequence approach a limiting value. For a sequence {an}, if lim an = L exists, then the sequence converges to L and if L does not exist (infinity/oscillations/undefined), then the sequence diverges.",
@@ -202,13 +214,13 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "Power series",
                                               "definition":  "a power series is essentially an infinite polynomial, i.e., an infinite series that involves powers of a variable (usually x) centered for a constant/ coefficients (usually c). Domain of this function is the set of all x values in which this series converges.  If c=0, Maclaurin series.",
-                                              "application":  "[IMG:assets/excel-img/image3.png]",
+                                              "application":  "[IMG:assets/excel-img/image5.png]",
                                               "resources":  "https://www.youtube.com/watch?v=OxVBT83x8oc ; https://youtu.be/a58otkmkHtk?si=fKIq2HYtO2quir3U"
                                           },
                                           {
                                               "concept":  "Indefinite integrals / Antiderivates",
                                               "definition":  "Taking all the derivatives and adding it all up.  While derivates is the rate of change at one instance, integrals adds up infinitely many small parts to find the whole (usually visualized as the area under a curve). Notation- The long  S integral symbol represents the limit of sums, the top number is upper limit and bottom number is lower limit and the function needs to be followed by dx.",
-                                              "application":  "[IMG:assets/excel-img/image4.png]",
+                                              "application":  "[IMG:assets/excel-img/image6.png]",
                                               "resources":  "https://www.youtube.com/watch?v=__Uw1SXPW7s"
                                           },
                                           {
@@ -220,7 +232,7 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "Gaussian integral / Probability integral",
                                               "definition":  "Gaussian integral is one of the most important concepts for statistics- area under a bell-shaped curve. It is an improper integral. Integral of e-x^2 from -infinity to +infinity. Nobody has found an elementary integral formula. So, usual integration techniques do not work here. Usually solved using \u0027polar coordinates\u0027- it is cool that the answer is uduall square root of pi even though there is no circle/angle/geometry! Laplace had a cooler way to calculate it even before.",
-                                              "application":  "[IMG:assets/excel-img/image5.png]",
+                                              "application":  "[IMG:assets/excel-img/image7.png]",
                                               "resources":  "https://youtu.be/rBPUXDmPHtw?si=aVpNZcfrt4iJ6jvg"
                                           }
                                       ]
@@ -231,8 +243,26 @@ window.GOLDFISH_EXCEL_DATA = [
                                           {
                                               "concept":  "Introduction /Overview of Multivariate Calculus",
                                               "definition":  "From 2D plane to 3D plane",
-                                              "application":  "This video was super super helpful. Gave a motivating problem to visualize and think intuitively at each step of the calculations.",
-                                              "resources":  "https://www.youtube.com/watch?v=ZTxafDib4VU"
+                                              "application":  "This video was super super helpful. Gave a motivating problem to visualize and think intuitively at each step of the calculations. Was the basis was majority of my notes. Would recommend watching the video without the sound effects (in his video description) cause they did get annoying for me.",
+                                              "resources":  "[FAV]https://www.youtube.com/watch?v=ZTxafDib4VU"
+                                          },
+                                          {
+                                              "concept":  "Calculus III: Multivariable Calculus",
+                                              "definition":  "Dr. Trefor Bazett YT Channel Playlist",
+                                              "application":  "Pretty cool and structured lectures with visual elements and they are also super short which is awesome.",
+                                              "resources":  "https://youtube.com/playlist?list=PLHXZ9OQGMqxc_CvEy7xBKRQr6I214QJcd\u0026si=fIJlannFqcz57B7z"
+                                          },
+                                          {
+                                              "concept":  "Vector",
+                                              "definition":  "Mathematical construct that has magnitude and direction.",
+                                              "application":  "In my opinion, the most important concept for neuroscience and this video covers all the operations that we can do with vectors with graphs, making it easier to visualize.",
+                                              "resources":  "https://youtu.be/KBSCMTYaH1s?si=ftuGN3IvMlqpyFco ; [FAV]https://youtu.be/Ej3ZVxljJfo?si=nW6khIIFr0wBMK12"
+                                          },
+                                          {
+                                              "concept":  "Dot product",
+                                              "definition":  "How can I find the angle between two vectors, v and u? Consider a third side that connects the two vectors (u - v, explained in the previous section) and make it a triangle. One method of vector multiplication is the dot product. The dot product takes two numbers as input and gives one SCALAR number output. If the angle between two vectos is 90, the vectors are orthogonal/perpendicular and the dot product of any orthogonal vector is 0.",
+                                              "application":  "[IMG:assets/excel-img/image8.png]",
+                                              "resources":  "https://youtu.be/0iNrGpwZwog?si=ushDS_w07NYsYA8T"
                                           },
                                           {
                                               "concept":  "Parial derivative",
@@ -241,26 +271,44 @@ window.GOLDFISH_EXCEL_DATA = [
                                               "resources":  ""
                                           },
                                           {
-                                              "concept":  "Gradient",
+                                              "concept":  "Gradient (Which way is up)",
                                               "definition":  "Finds the direction of the steepest ascent on a surface. The gradient packages the two fundamental slopes (partial derivatives) into a single vector.",
                                               "application":  "",
                                               "resources":  ""
                                           },
                                           {
-                                              "concept":  "Jacobian",
-                                              "definition":  "Translates changes in input to outputs in multiple dimensions. Derivative is the Matrix of vector functions- a small change in inputs into resulting change in outputs.",
+                                              "concept":  "Jacobian (A Linear Map)",
+                                              "definition":  "Translates changes in input to outputs in multiple dimensions. Derivative is the Matrix of vector functions- a small change in inputs into resulting change in outputs. This is the engine that is driving modern AI.",
                                               "application":  "",
                                               "resources":  ""
                                           },
                                           {
                                               "concept":  "Multivariate chain rule",
                                               "definition":  "The derivative of the whole chain is the product of the derivative matrices (the jacobians) of each step",
+                                              "application":  "The process of using chain rule to see how a final output is affected by an initial input by multiplying jacobians backward through a long chain of functions is the algorithm of backpropagation. A deep neural network is a gaint composition of functions (layers). When it makes a mistake, backpropogation uses the chain rule to compute the gradient with respect to every single weight.",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Hessian (Shape of surface)",
+                                              "definition":  "Determines the shape of a surface; peak/valley/ saddle. The second derivative of multivariate calculus. This is the matrix of all the second-order parial derivatives.",
                                               "application":  "",
                                               "resources":  ""
                                           },
                                           {
-                                              "concept":  "Hessian",
-                                              "definition":  "Determines the shape of a surface; peak/valley/ saddle",
+                                              "concept":  "Local minimum",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Local maximum",
+                                              "definition":  "",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Saddle point",
+                                              "definition":  "",
                                               "application":  "",
                                               "resources":  ""
                                           },
@@ -272,19 +320,25 @@ window.GOLDFISH_EXCEL_DATA = [
                                           },
                                           {
                                               "concept":  "Lagrange Multipliers",
-                                              "definition":  "Finds max/min of a function subject to a constraint",
+                                              "definition":  "Finds max/min of a function subject to a constraint. Finding the best/ highest value along one specific path (rules and conditions). Two vectors are parallel if one is just scaled version of the other. The scaling factor (lambda) is the Lagrange multiplier. The value of lamba a.k.a, the shadow price tells you exactly how much your objective function would increase if you relaxed your constraint by one unit",
                                               "application":  "",
                                               "resources":  ""
                                           },
                                           {
-                                              "concept":  "Double and Triple integrals",
-                                              "definition":  "Calculates the volume under a surfcae or mass of an object",
+                                              "concept":  "Double integrals",
+                                              "definition":  "Calculates the volume under a surfcae or mass of an object.",
+                                              "application":  "",
+                                              "resources":  ""
+                                          },
+                                          {
+                                              "concept":  "Variable bounds",
+                                              "definition":  "",
                                               "application":  "",
                                               "resources":  ""
                                           },
                                           {
                                               "concept":  "Change of Variables",
-                                              "definition":  "Simplifies integrals by switching coordinate systems",
+                                              "definition":  "Simplifies integrals by switching coordinate systems- Cartesian to Polar.",
                                               "application":  "",
                                               "resources":  ""
                                           }
@@ -477,8 +531,8 @@ window.GOLDFISH_EXCEL_DATA = [
                                           },
                                           {
                                               "concept":  "Anatomy of eye",
-                                              "definition":  "Cornea [outermost layer, protective barrier, refract incoming light and direct it onto the retina], Iris [colored part, regulat amount of light entering the eye, control size of pupil], Pupil [dilate or constrict in response to light inensity], Lens [fine-tune focus of light], Ciliary muscles [alter curvature of lens to focus across distances], Retina [light sensitive tissue composed of multiple layers of neurons and photoreceptors], Fovea inside the macula region [central area w dense concentration of cones, responsible for high visual acuity, color vision and detail perception].",
-                                              "application":  "The main function of the human eye is to capture incoming light and convert it into electrical signal.",
+                                              "definition":  "The main function of the human eye is to capture incoming light and convert it into electrical signal. Cornea [outermost layer, protective barrier, refract incoming light and direct it onto the retina], Iris [colored part, regulat amount of light entering the eye, control size of pupil], Pupil [dilate or constrict in response to light inensity], Lens [fine-tune focus of light], Ciliary muscles [alter curvature of lens to focus across distances], Retina [light sensitive tissue composed of multiple layers of neurons and photoreceptors], Fovea inside the macula region [central area w dense concentration of cones, responsible for high visual acuity, color vision and detail perception].",
+                                              "application":  "[IMG:assets/excel-img/image9.png]",
                                               "resources":  "https://youtu.be/MgMNUne9j9c?si=FogfgzYFMpjg3K9L"
                                           },
                                           {
